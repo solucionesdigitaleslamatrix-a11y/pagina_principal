@@ -1,0 +1,28 @@
+/* Kenia — tokens globales compartidos por todas las páginas. */
+:root {
+  --red: #C8102E;
+  --red-dark: #9E0C24;
+  --gold: #D4AF37;
+  --gold-soft: #E5C185;
+  --gold-deep: #805B0D;
+  --cream: #FFFDF9;
+  --cream-2: #F7F0E6;
+  --pink: #F7C6D1;
+  --pink-soft: #FDEDF0;
+  --sky: #BDE0F0;
+  --sky-soft: #EAF5FA;
+  --ink: #312521;
+  --ink-soft: #68554E;
+  --cocoa: #35201B;
+  --wa: #137A3F;
+  --font-display: Georgia, "Times New Roman", serif;
+  --font-script: Georgia, "Times New Roman", serif;
+  --font-body: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --radius: 4px;
+  --shadow-sm: none;
+  --shadow-md: none;
+  --shadow-lg: none;
+  --header-h: 78px;
+  --ease: cubic-bezier(.2, .7, .2, 1);
+  color-scheme: light;
+}

@@ -1,0 +1,408 @@
+
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#C8102E">
+<title>Información Legal | Panadería y Pastelería Kenia</title>
+<link rel="icon" href="assets/favicon.png">
+<link rel="stylesheet" href="assets/kenia-tokens.css">
+<style>
+/* Tokens globales centralizados en assets/kenia-tokens.css. */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{
+  margin:0;background:var(--cream);color:var(--ink);
+  font:16px/1.75 'Montserrat',Arial,sans-serif;
+}
+a{color:var(--red);text-decoration:none}
+a:hover{text-decoration:underline}
+.container{width:min(1120px,92%);margin:auto}
+header{
+  position:sticky;top:0;z-index:10;
+  background:rgba(253,251,247,.94);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid #ead9a5;
+}
+.nav{
+  min-height:82px;display:flex;align-items:center;
+  justify-content:space-between;gap:20px;
+}
+.logo img{width:145px;max-width:100%;height:auto}
+.navlinks{display:flex;align-items:center;gap:24px;flex-wrap:wrap}
+.navlinks a{font-weight:600;color:var(--ink)}
+.btn{
+  display:inline-block;background:var(--red);color:white;
+  padding:12px 22px;border-radius:30px;font-weight:700;
+  border:2px solid var(--red);transition:.25s;
+}
+.btn:hover{background:var(--red-dark);text-decoration:none}
+.hero{
+  padding:70px 0 55px;
+  background:
+    radial-gradient(circle at 90% 20%,#f7c6d155,transparent 30%),
+    radial-gradient(circle at 10% 90%,#d4af3730,transparent 28%);
+  border-bottom:1px solid #ead9a5;
+}
+.breadcrumb{font-size:14px;color:var(--ink-soft);margin-bottom:25px}
+.eyebrow{
+  color:var(--red);font-family:Georgia,serif;
+  font-style:italic;font-size:22px;
+}
+h1,h2,h3{font-family:Georgia,'Times New Roman',serif;line-height:1.2}
+h1{font-size:clamp(40px,7vw,75px);margin:12px 0;color:var(--ink)}
+h1 span{color:var(--red);font-style:italic}
+.lead{font-size:18px;max-width:720px;color:var(--ink-soft)}
+.hero-note{
+  margin-top:28px;padding:18px 22px;
+  border-left:4px solid var(--gold);
+  background:white;border-radius:0 15px 15px 0;
+  max-width:850px;
+}
+.layout{
+  display:grid;grid-template-columns:260px 1fr;
+  gap:35px;padding:55px 0;
+}
+.sidebar{
+  position:sticky;top:105px;align-self:start;
+  padding:24px;background:white;border:1px solid #ead9a5;
+  border-radius:20px;box-shadow:0 10px 30px #36211d0b;
+}
+.sidebar h3{margin-top:0;color:var(--red)}
+.sidebar a{
+  display:block;padding:10px 0;border-bottom:1px dashed #ead9a5;
+  color:var(--ink);font-size:14px;
+}
+.sidebar a:hover{color:var(--red)}
+.content{min-width:0}
+article{
+  background:white;padding:clamp(22px,4vw,40px);
+  border-radius:22px;margin-bottom:25px;
+  border:1px solid #ead9a5;
+  box-shadow:0 10px 30px #36211d08;
+  scroll-margin-top:100px;
+}
+article h2{font-size:29px;color:var(--red);margin:0 0 20px}
+article h3{font-size:20px;margin:25px 0 8px}
+article p,article li{color:#5d4840}
+article ul{padding-left:22px}
+.pending{
+  background:#fff6e2;padding:14px;border-radius:10px;
+  border-left:3px solid var(--gold);font-size:14px;
+}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0}
+.btn-outline{background:transparent;color:var(--red)}
+.btn-outline:hover{background:var(--red);color:white}
+footer{
+  background:#2b1714;color:#fff;padding:35px 0;
+  border-top:5px solid var(--gold);
+}
+.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer a{color:#e5c185}
+footer p{color:#e9d9d0;margin:8px 0}
+@media(max-width:800px){
+  .nav{padding:12px 0;flex-wrap:wrap}
+  .navlinks{gap:12px;font-size:14px}
+  .layout{grid-template-columns:1fr}
+  .sidebar{position:static}
+  .sidebar nav{display:grid;grid-template-columns:1fr 1fr;gap:0 15px}
+  .hero{padding:45px 0}
+}
+@media(max-width:480px){
+  .logo img{width:115px}
+  .navlinks{width:100%;justify-content:space-between}
+  .sidebar nav{grid-template-columns:1fr}
+  article h2{font-size:25px}
+}
+</style>
+<link rel="stylesheet" href="assets/kenia-secondary-pages.css">
+</head>
+<body class="legal-page">
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="index.html" aria-label="Kenia inicio">
+      <img src="assets/logo.png" alt="Panadería y Pastelería Kenia">
+    </a>
+    <nav class="navlinks">
+      <a href="index.html#pasteles">Pasteles</a>
+      <a href="index.html#brunch">Brunch</a>
+      <a href="index.html#contacto">Contacto</a>
+      <a class="btn" href="https://wa.me/573227646484">Pedir por WhatsApp</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Inicio</a> / Información legal</div>
+    <p class="eyebrow">Cuidamos cada detalle</p>
+    <h1>Información <span>legal</span></h1>
+    <p class="lead">
+      La confianza también hace parte de nuestros ingredientes.
+      Consulta cómo tratamos tus datos, cómo funciona este sitio
+      y cuáles son las condiciones de atención de Kenia.
+    </p>
+    <div class="hero-note">
+      <strong>Información preliminar.</strong>
+      Los campos señalados como pendientes deben ser confirmados
+      por el responsable del negocio antes de publicar estos
+      documentos como versión definitiva.
+    </div>
+  </div>
+</section>
+
+<div class="container layout">
+<aside class="sidebar">
+  <h3>Explora esta página</h3>
+  <nav>
+    <a href="#privacidad">01 · Política de privacidad</a>
+    <a href="#cookies">02 · Política de cookies</a>
+    <a href="#terminos">03 · Términos y condiciones</a>
+    <a href="#cambios">04 · Cambios y cancelaciones</a>
+    <a href="#aviso">05 · Aviso legal</a>
+    <a href="index.html?privacy=1#preferencias">Ajustes de privacidad ↗</a>
+  </nav>
+  <p style="font-size:14px;margin-top:20px">
+    ¿Tienes una pregunta?
+    <a href="https://wa.me/573227646484">Contacta a Kenia por WhatsApp</a>.
+  </p>
+</aside>
+
+<div class="content">
+
+<article id="privacidad">
+<h2>Política de tratamiento de datos personales</h2>
+<p><strong>Fecha de publicación:</strong> [PENDIENTE: fecha de aprobación].</p>
+
+<h3>Responsable del tratamiento</h3>
+<p>Nombre comercial: Panadería y Pastelería Kenia.</p>
+<p class="pending">
+[PENDIENTE: nombre completo o razón social del responsable,
+NIT o identificación aplicable, dirección para notificaciones
+judiciales y correo electrónico para consultas de datos personales.]
+</p>
+<p>
+Dirección comercial publicada: Cl. 39 Bis Sur #72J-62,
+Bogotá, Colombia. Teléfono/WhatsApp: +57 322 764 6484.
+El titular debe confirmar si estos datos también son
+canales formales para ejercer derechos.
+</p>
+
+<h3>Datos y finalidades</h3>
+<p>
+El formulario solicita nombre, teléfono, tipo de evento y
+un mensaje. Se utilizan para responder consultas, gestionar
+cotizaciones, pedidos de pastelería, panadería o consultas
+y reservas de brunch. No se solicita información sensible.
+</p>
+<p>
+El formulario se procesa en el navegador: este sitio no envía
+los campos a un servidor propio ni mantiene una base de datos.
+Al enviar, se prepara un mensaje y se abre WhatsApp.
+La persona decide continuar el envío en ese servicio.
+Los datos compartidos quedan sujetos también a las condiciones
+de WhatsApp/Meta y al tratamiento que realice el negocio.
+</p>
+
+<h3>Autorización y derechos del titular</h3>
+<p>
+El formulario incluye una casilla no premarcada para solicitar
+autorización previa, expresa e informada. El responsable deberá
+conservar evidencia suficiente de la autorización y de la
+versión de esta política mostrada al titular.
+La implementación estática no genera un registro verificable
+en servidor.
+</p>
+<p>
+El titular puede solicitar conocer, actualizar y rectificar
+sus datos; pedir prueba de autorización; ser informado sobre
+su uso; presentar quejas ante la Superintendencia de Industria
+y Comercio; y solicitar revocatoria o supresión cuando proceda.
+</p>
+<p class="pending">
+[PENDIENTE: definir correo o canal formal de consultas y reclamos,
+procedimiento interno y sistema de conservación de autorizaciones.]
+</p>
+
+<h3>Conservación, encargados y transferencias</h3>
+<p>
+El sitio no guarda los campos del formulario en su servidor.
+El responsable sí puede conservar conversaciones y datos
+recibidos por WhatsApp para atender solicitudes y cumplir
+obligaciones legales o contractuales.
+</p>
+<p class="pending">
+[PENDIENTE: establecer criterios de conservación, personas
+con acceso, proveedores, dispositivos, copias o sistemas
+de gestión utilizados.]
+</p>
+<p>
+Los servicios externos se conectan tras una acción del visitante:
+WhatsApp al pulsar un enlace y Google Maps al solicitar cargar
+el mapa. Estos proveedores pueden tratar datos técnicos
+conforme a sus propias políticas.
+</p>
+
+<h3>Marco normativo</h3>
+<p>
+Esta política toma como referencia la Ley 1581 de 2012 y su
+reglamentación, incluido el Decreto 1377 de 2013 compilado
+en el Decreto 1074 de 2015. El responsable debe adaptarla
+a sus operaciones reales.
+</p>
+<ul>
+<li><a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=49981" target="_blank" rel="noopener">Ley 1581 de 2012</a></li>
+<li><a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=53646" target="_blank" rel="noopener">Decreto 1377 de 2013</a></li>
+</ul>
+</article>
+
+<article id="cookies">
+<h2>Política de cookies y almacenamiento local</h2>
+<p>
+En esta versión no se integran Google Analytics, Meta Pixel
+ni herramientas de analítica o publicidad. No se instalan
+cookies propias de seguimiento deliberadamente.
+</p>
+<ul>
+<li><strong>Necesarias:</strong> almacenamiento local del navegador para recordar la preferencia de privacidad.</li>
+<li><strong>Analíticas:</strong> no hay proveedor ni etiqueta configurada.</li>
+<li><strong>Publicidad:</strong> no hay píxeles ni etiquetas configuradas.</li>
+<li><strong>Servicios externos:</strong> Google Maps se carga cuando el visitante lo solicita. WhatsApp y Google Maps requieren una acción voluntaria.</li>
+</ul>
+<p>
+La configuración permite guardar o retirar preferencias.
+Aceptar una categoría no activa servicios que no estén instalados.
+Si se agregan proveedores, se deberá actualizar esta política,
+describir finalidades y bloquear etiquetas opcionales antes
+de la autorización correspondiente.
+</p>
+<p>
+El hosting, navegador o proveedores externos podrían utilizar
+tecnologías técnicas propias. El titular debe revisar el
+comportamiento real antes de publicar.
+</p>
+<p><a href="index.html?privacy=1#preferencias">Abrir ajustes de privacidad</a></p>
+</article>
+
+<article id="terminos">
+<h2>Términos y condiciones de uso</h2>
+<p>
+Este sitio presenta información sobre pasteles personalizados,
+panadería, ponqués, desayunos y brunch de Panadería y Pastelería
+Kenia, ubicada en Cl. 39 Bis Sur #72J-62, Bogotá.
+El sitio no recibe pagos ni confirma pedidos automáticamente:
+los botones abren WhatsApp o enlaces externos.
+</p>
+<h3>Información de productos y pedidos</h3>
+<p>
+Las fotografías del portafolio son referencias visuales.
+Los diseños personalizados pueden requerir cotización específica.
+Precios, disponibilidad, tamaño, porciones, sabores, ingredientes,
+alérgenos, fecha de entrega o recogida y demás condiciones
+deben confirmarse con el negocio antes de aceptar el pedido.
+</p>
+<h3>Uso del sitio</h3>
+<p>
+El visitante se compromete a utilizar el sitio de forma lícita,
+respetuosa y sin afectar su funcionamiento, seguridad o
+disponibilidad.
+</p>
+<p>
+La información publicada puede actualizarse, corregirse o
+retirarse. La confirmación final de cada pedido se realiza
+por los canales de atención del negocio.
+</p>
+</article>
+
+<article id="cambios">
+<h2>Cambios, cancelaciones y reembolsos</h2>
+<p>
+El sitio no permite cancelar o reembolsar una compra directamente.
+Para solicitar cambios, cancelaciones, garantías o presentar
+inconformidades, el cliente debe contactar al negocio.
+</p>
+<p>
+La Ley 1480 de 2011 contempla excepciones al derecho de retracto,
+entre ellas bienes confeccionados conforme a especificaciones
+del consumidor o claramente personalizados, bienes que puedan
+deteriorarse o caducar rápidamente y bienes perecederos.
+Estas excepciones pueden ser relevantes para pasteles y alimentos,
+pero dependen del producto y las circunstancias concretas.
+No eliminan derechos relacionados con calidad, idoneidad,
+seguridad o información veraz.
+</p>
+<p>
+Consulta la <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=44306" target="_blank" rel="noopener">Ley 1480 de 2011</a>
+y la <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=257116" target="_blank" rel="noopener">Ley 2439 de 2024</a>.
+</p>
+<p>
+Cuando el retracto resulte aplicable a una operación a distancia,
+el plazo general previsto es de cinco (5) días hábiles.
+La Ley 2439 de 2024 modificó, entre otros asuntos, el plazo
+de devolución del dinero en operaciones de comercio electrónico
+bajo las condiciones que establece.
+</p>
+<p class="pending">
+[PENDIENTE: aprobar política comercial sobre anticipos,
+fecha límite para modificar diseños, cancelaciones,
+pedidos iniciados, productos defectuosos, entregas tardías,
+reembolsos y canal de reclamación.]
+</p>
+</article>
+
+<article id="aviso">
+<h2>Aviso legal e identificación del responsable</h2>
+<p><strong>Nombre comercial:</strong> Panadería y Pastelería Kenia.</p>
+<p><strong>Actividad:</strong> panadería, pastelería, productos personalizados y cafetería/brunch.</p>
+<p><strong>Dirección comercial:</strong> Cl. 39 Bis Sur #72J-62, Bogotá, Colombia.</p>
+<p><strong>Teléfono:</strong> +57 322 764 6484.</p>
+<p class="pending">
+[PENDIENTE: razón social o nombre completo del comerciante,
+NIT, dirección de notificación judicial, correo electrónico,
+responsable de la política de datos y fecha de actualización.]
+</p>
+<p>
+La identificación exigible debe completarse y mantenerse
+actualizada antes de utilizar este medio para concretar ventas
+por canales electrónicos. El nombre comercial por sí solo
+no permite verificar la identidad jurídica del proveedor.
+</p>
+</article>
+
+<div class="actions">
+<a class="btn" href="index.html">Volver al sitio</a>
+<a class="btn btn-outline" href="https://wa.me/573227646484">Contactar a Kenia</a>
+<a class="btn btn-outline" href="index.html?privacy=1#preferencias">Preferencias</a>
+</div>
+<p style="font-size:14px;color:#6E534B">
+Este contenido es informativo y debe completarse y validarse
+según la operación real del negocio.
+</p>
+
+</div>
+</div>
+</main>
+
+<footer>
+<div class="container footer-row">
+<div>
+<strong>Panadería y Pastelería Kenia</strong>
+<p>Endulzamos tus momentos más especiales.</p>
+</div>
+<div>
+<a href="#privacidad">Privacidad</a> ·
+<a href="#cookies">Cookies</a> ·
+<a href="#terminos">Términos</a> ·
+<a href="#aviso">Aviso legal</a>
+</div>
+<div>© <span id="year"></span> Kenia · Bogotá</div>
+</div>
+</footer>
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>

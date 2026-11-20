@@ -1,0 +1,177 @@
+/* Kenia — lenguaje visual compartido para información legal y página 404.
+   Reglas deliberadamente cosméticas: no cambian el DOM ni los breakpoints existentes. */
+.legal-page,
+.error-page {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  letter-spacing: 0;
+}
+
+.legal-page h1,
+.legal-page h2,
+.legal-page h3,
+.error-page h1,
+.error-page h2 {
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -.018em;
+}
+
+.legal-page a,
+.error-page a { text-underline-offset: .2em; }
+
+.legal-page header,
+.error-page header {
+  background: var(--cream);
+  border-bottom: 1px solid rgba(128, 91, 13, .22);
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+
+/* Información legal: lectura continua, no una colección de tarjetas. */
+.legal-page .hero {
+  background: var(--cream-2);
+  border-bottom: 1px solid rgba(128, 91, 13, .22);
+}
+
+.legal-page .eyebrow,
+.error-page .eyebrow {
+  color: var(--red);
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-style: italic;
+  letter-spacing: 0;
+}
+
+.legal-page .lead,
+.legal-page article p,
+.legal-page article li { color: var(--ink-soft); }
+
+.legal-page .sidebar {
+  padding: .25rem 0 .25rem 1.25rem;
+  background: transparent;
+  border: 0;
+  border-left: 2px solid var(--gold);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.legal-page .sidebar h3 {
+  margin: 0 0 .5rem;
+  color: var(--red);
+}
+
+.legal-page .sidebar a {
+  border-bottom: 1px solid rgba(128, 91, 13, .18);
+  color: var(--ink);
+}
+
+.legal-page article {
+  margin: 0;
+  padding: clamp(1.5rem, 3.5vw, 2.5rem) 0;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid rgba(128, 91, 13, .22);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.legal-page article h2 {
+  margin-bottom: 1.1rem;
+  color: var(--ink);
+  font-size: clamp(1.55rem, 2.6vw, 2rem);
+  line-height: 1.15;
+}
+
+.legal-page article h3 { color: var(--red); }
+
+.legal-page .pending {
+  padding: 1rem 1.1rem;
+  background: #FFF5E8;
+  border-left: 3px solid var(--red);
+  border-radius: 0;
+  color: var(--ink);
+}
+
+.legal-page .hero-note {
+  background: #fff;
+  border-left: 3px solid var(--gold);
+  border-radius: 0;
+}
+
+.legal-page .btn,
+.error-page .btn {
+  border-radius: 100px;
+  font-family: var(--font-body);
+  font-weight: 650;
+  transition: background-color .18s ease, border-color .18s ease, color .18s ease;
+}
+
+.legal-page .btn:hover,
+.error-page .btn:hover { transform: none; }
+
+.legal-page footer,
+.error-page footer {
+  background: var(--cocoa);
+  border-top: 2px solid var(--gold);
+}
+
+/* Página 404: fotografía y mensaje con tratamiento editorial sobrio. */
+.error-page .code {
+  color: var(--gold-deep);
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -.035em;
+  text-shadow: none;
+}
+
+.error-page h1 {
+  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  line-height: 1.08;
+}
+
+.error-page h1 span { color: var(--red); }
+.error-page .description { color: var(--ink-soft); }
+
+.error-page .photo {
+  border: 0;
+  border-radius: 4px;
+  background: var(--cream-2);
+  box-shadow: none;
+}
+
+.error-page .caption {
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  background: var(--cream-2);
+  border-left: 3px solid var(--gold);
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.error-page .caption small { color: var(--red); }
+.error-page .caption strong { font-family: var(--font-display); font-weight: 600; }
+.error-page .links a { color: var(--red); }
+
+.legal-page :focus-visible,
+.error-page :focus-visible {
+  outline: 3px solid var(--gold-deep);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .legal-page *,
+  .legal-page *::before,
+  .legal-page *::after,
+  .error-page *,
+  .error-page *::before,
+  .error-page *::after {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

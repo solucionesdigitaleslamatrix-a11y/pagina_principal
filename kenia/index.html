@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Panadería y Pastelería Kenia | Pasteles personalizados y brunch en Bogotá</title>
+<meta name="description" content="Pasteles personalizados, panadería artesanal y desayunos en Bogotá. Consulta por WhatsApp y visítanos en Cl. 39 Bis Sur #72J-62.">
+<meta name="theme-color" content="#C8102E">
+<meta name="color-scheme" content="light">
+<meta name="format-detection" content="telephone=no">
+<link rel="icon" type="image/png" sizes="256x256" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+<link rel="stylesheet" href="assets/kenia-tokens.css">
+<link rel="preload" as="image" href="assets/rosas.jpg" fetchpriority="high">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Panadería y Pastelería Kenia · Bogotá">
+<meta property="og:description" content="Endulzamos tus momentos más especiales: pasteles personalizados, pan fresco y brunch.">
+<meta property="og:locale" content="es_CO">
+
+<!-- Marca la página como "con JS" cuanto antes (evita parpadeos en las animaciones de scroll) -->
+<script>document.documentElement.classList.add('js');</script>
+
+<!-- Datos estructurados para Google (negocio local) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Bakery",
+  "name": "Panadería y Pastelería Kenia",
+  "description": "Panadería artesanal, pastelería creativa (pasteles personalizados) y cafetería con brunch en Bogotá.",
+  "telephone": "+57 322 764 6484",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Cl. 39 Bis Sur #72J-62",
+    "addressLocality": "Bogotá",
+    "addressCountry": "CO"
+  }
+}
+</script>
+
+<style>
+/* ==========================================================================
+   1. VARIABLES Y BASE
+   ========================================================================== */
+/* Tokens globales centralizados en assets/kenia-tokens.css. */
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 8px); -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--ink);
+  background-color: var(--cream);
+  /* Textura sutil de harina */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .32 0 0 0 0 .2 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  overflow-x: hidden;
+}
+main { overflow-x: clip; }
+img, svg { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+ul { margin: 0; padding: 0; list-style: none; }
+h1, h2, h3, h4, p { margin: 0; }
+h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.12; font-weight: 600; letter-spacing: -.01em; }
+button { font: inherit; color: inherit; cursor: pointer; }
+:focus-visible { outline: 3px solid var(--red); outline-offset: 3px; border-radius: 6px; }
+.container { width: min(1180px, 100% - 2.5rem); margin-inline: auto; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.icon { width: 1.25em; height: 1.25em; fill: currentColor; flex: none; }
+.s { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; } /* trazos dentro del sprite */
+.icon-stroke { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+
+.skip-link { position: absolute; left: 1rem; top: -4rem; background: var(--red); color: #fff; padding: .6rem 1rem; border-radius: 10px; z-index: 200; transition: top .2s; }
+.skip-link:focus { top: 1rem; }
+
+/* Imágenes (definidas como variables al final del <head>) */
+.img { background-size: cover; background-position: center; background-repeat: no-repeat; }
+.img-rosas    { background-image: var(--img-rosas); }
+.img-titanic  { background-image: var(--img-titanic); }
+.img-gabriela { background-image: var(--img-gabriela); }
+.img-latte    { background-image: var(--img-latte); }
+.img-menu     { background-image: var(--img-menu); }
+
+/* ==========================================================================
+   2. COMPONENTES REUTILIZABLES
+   ========================================================================== */
+.eyebrow { font-family: var(--font-script); font-weight: 700; font-size: 1.55rem; line-height: 1; color: var(--red); display: inline-flex; align-items: center; gap: .6rem; }
+.eyebrow::before { content: ""; width: 34px; height: 2px; background: var(--gold); border-radius: 2px; }
+.script { font-family: var(--font-script); font-weight: 700; color: var(--red); font-size: 1.12em; letter-spacing: 0; }
+
+.section { padding-block: clamp(4rem, 9vw, 7.5rem); position: relative; }
+.section-head { max-width: 680px; margin-bottom: clamp(2rem, 5vw, 3.5rem); }
+.section-head h2 { font-size: clamp(2rem, 5vw, 3.2rem); margin-top: .6rem; }
+.section-head p { margin-top: 1rem; color: var(--ink-soft); font-size: 1.05rem; }
+.section-head.center { text-align: center; margin-inline: auto; }
+.section-head.center .eyebrow::after { content: ""; width: 34px; height: 2px; background: var(--gold); border-radius: 2px; }
+
+/* Botones */
+.btn {
+  --bg: var(--red); --fg: #fff; --bd: var(--red);
+  position: relative; overflow: hidden; isolation: isolate;
+  display: inline-flex; align-items: center; justify-content: center; gap: .6rem;
+  padding: .95rem 1.7rem; border-radius: 999px;
+  background: var(--bg); color: var(--fg); border: 2px solid var(--bd);
+  font-weight: 600; font-size: .98rem; letter-spacing: .01em; line-height: 1.2; text-align: center;
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease), background-color .3s, color .3s, border-color .3s;
+  box-shadow: 0 8px 22px rgba(200, 16, 46, .28);
+}
+.btn::after { /* brillo que cruza el botón */
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: linear-gradient(105deg, transparent 30%, rgba(255,255,255,.35) 50%, transparent 70%);
+  transform: translateX(-120%); transition: transform .7s var(--ease);
+}
+.btn:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(200, 16, 46, .36); --bg: var(--red-dark); --bd: var(--red-dark); }
+.btn:hover::after { transform: translateX(120%); }
+.btn:active { transform: translateY(0) scale(.98); }
+.btn-ghost { --bg: transparent; --fg: var(--ink); --bd: var(--gold); box-shadow: none; }
+.btn-ghost:hover { --bg: var(--gold-soft); --fg: var(--ink); --bd: var(--gold); box-shadow: 0 10px 24px rgba(212, 175, 55, .3); }
+.btn-light { --bg: #fff; --fg: var(--red); --bd: #fff; box-shadow: 0 12px 30px rgba(0,0,0,.25); }
+.btn-light:hover { --bg: var(--cream); --bd: var(--cream); box-shadow: 0 18px 40px rgba(0,0,0,.32); }
+.btn-sm { padding: .65rem 1.15rem; font-size: .88rem; }
+.btn .icon { width: 1.35em; height: 1.35em; }
+
+/* Scroll reveal (solo si hay JS). Usa animation para no interferir con los hover de cada elemento */
+.js .reveal:not(.is-visible) { opacity: 0; }
+.js .reveal.is-visible { animation: reveal-up .9s var(--ease) var(--d, 0s) backwards; }
+.js .reveal.is-visible[data-reveal="left"]  { animation-name: reveal-left; }
+.js .reveal.is-visible[data-reveal="right"] { animation-name: reveal-right; }
+.js .reveal.is-visible[data-reveal="zoom"]  { animation-name: reveal-zoom; }
+@keyframes reveal-up    { from { opacity: 0; transform: translateY(32px); } }
+@keyframes reveal-left  { from { opacity: 0; transform: translateX(-40px); } }
+@keyframes reveal-right { from { opacity: 0; transform: translateX(40px); } }
+@keyframes reveal-zoom  { from { opacity: 0; transform: scale(.92); } }
+
+/* ==========================================================================
+   3. NAVBAR (glassmorphism al hacer scroll)
+   ========================================================================== */
+.site-header { position: fixed; inset: 0 0 auto 0; z-index: 100; height: var(--header-h); transition: background-color .4s, box-shadow .4s, backdrop-filter .4s, height .3s; }
+.site-header.scrolled {
+  background: rgba(253, 251, 247, .72);
+  -webkit-backdrop-filter: blur(16px) saturate(160%); backdrop-filter: blur(16px) saturate(160%);
+  box-shadow: 0 1px 0 rgba(212, 175, 55, .35), 0 10px 30px rgba(54, 33, 29, .08);
+}
+.nav { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+.brand { display: block; width: 118px; aspect-ratio: 520 / 228; background: var(--img-logo) center / contain no-repeat; transition: transform .4s var(--ease); }
+.brand:hover { transform: rotate(-2deg) scale(1.05); }
+.nav-menu {
+  position: absolute; top: var(--header-h); left: 0; right: 0;
+  display: flex; flex-direction: column; gap: .25rem; padding: 1rem 1.25rem 1.5rem;
+  background: var(--cream);
+  border-bottom: 1px solid rgba(212, 175, 55, .4); box-shadow: var(--shadow-md);
+  opacity: 0; visibility: hidden; transform: translateY(-12px); transition: all .35s var(--ease);
+}
+.nav-menu.open { opacity: 1; visibility: visible; transform: none; }
+.nav-menu a.nav-link { padding: .8rem .5rem; font-weight: 600; border-bottom: 1px dashed rgba(138, 101, 16, .3); }
+.nav-menu .btn { margin-top: .8rem; }
+.nav-menu .nav-link::after { display: none; }
+.nav-link { position: relative; font-size: .93rem; font-weight: 500; color: var(--ink); }
+.nav-link::after { content: ""; position: absolute; left: 0; right: 0; bottom: -4px; height: 2px; border-radius: 2px; background: var(--red); transform: scaleX(0); transform-origin: left; transition: transform .35s var(--ease); }
+.nav-link:hover::after, .nav-link.is-active::after { transform: scaleX(1); }
+.nav-link.is-active { color: var(--red); }
+.nav-toggle { width: 46px; height: 46px; border-radius: 50%; border: 1px solid rgba(138, 101, 16, .35); background: rgba(255,255,255,.6); display: grid; place-items: center; }
+.nav-toggle .bars, .nav-toggle .bars::before, .nav-toggle .bars::after { display: block; width: 20px; height: 2px; background: var(--ink); border-radius: 2px; transition: transform .3s var(--ease), background-color .3s; }
+.nav-toggle .bars { position: relative; }
+.nav-toggle .bars::before, .nav-toggle .bars::after { content: ""; position: absolute; left: 0; }
+.nav-toggle .bars::before { top: -6px; } .nav-toggle .bars::after { top: 6px; }
+.nav-toggle[aria-expanded="true"] .bars { background: transparent; }
+.nav-toggle[aria-expanded="true"] .bars::before { transform: translateY(6px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .bars::after  { transform: translateY(-6px) rotate(-45deg); }
+
+@media (min-width: 900px) {
+  .brand { width: 132px; }
+  .nav-toggle { display: none; }
+  .nav-menu { position: static; flex-direction: row; align-items: center; gap: 2.2rem; padding: 0; background: none; backdrop-filter: none; -webkit-backdrop-filter: none; border: 0; box-shadow: none; opacity: 1; visibility: visible; transform: none; }
+  .nav-menu a.nav-link { padding: 0; border: 0; font-weight: 500; }
+  .nav-menu .nav-link::after { display: block; }
+  .nav-menu .btn { margin: 0 0 0 .5rem; }
+}
+
+/* ==========================================================================
+   4. HERO
+   ========================================================================== */
+.hero { position: relative; padding: calc(var(--header-h) + 2.5rem) 0 clamp(3rem, 7vw, 5rem); overflow: hidden; }
+.blob { position: absolute; z-index: 0; border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; filter: blur(2px); animation: morph 14s ease-in-out infinite alternate; }
+.blob-pink { width: min(520px, 90vw); aspect-ratio: 1; background: var(--pink); opacity: .55; top: -120px; right: -140px; }
+.blob-sky  { width: min(420px, 80vw); aspect-ratio: 1; background: var(--sky);  opacity: .5;  bottom: -140px; left: -150px; animation-delay: -6s; }
+@keyframes morph {
+  0%   { border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; transform: rotate(0); }
+  100% { border-radius: 40% 60% 38% 62% / 52% 38% 62% 48%; transform: rotate(18deg); }
+}
+.sprinkle { position: absolute; z-index: 0; width: 14px; height: 5px; border-radius: 5px; opacity: .85; animation: floaty 6s ease-in-out infinite; }
+.sprinkle.s1 { background: var(--red);  top: 46%; right: 8%;  transform: rotate(35deg); }
+.sprinkle.s2 { background: var(--gold); top: 12%; left: 52%; transform: rotate(-30deg); animation-delay: -2s; }
+.sprinkle.s3 { background: var(--sky);  top: 60%; left: 3%;  transform: rotate(70deg); animation-delay: -4s; width: 18px; }
+.sprinkle.s4 { background: var(--pink); bottom: 14%; left: 46%; transform: rotate(-60deg); animation-delay: -1s; width: 18px; }
+@keyframes floaty { 0%, 100% { translate: 0 0; } 50% { translate: 0 -14px; } }
+
+.hero-grid { position: relative; z-index: 1; display: grid; gap: 3rem; align-items: center; }
+.hero-copy .eyebrow { font-size: 1.4rem; }
+.hero h1 { font-size: clamp(2.5rem, 8.2vw, 4.7rem); margin: 1rem 0 1.2rem; }
+.hero h1 .script { display: block; font-size: 1.18em; line-height: 1; margin-top: .1em; }
+.hero .lead { font-size: clamp(1.05rem, 2.4vw, 1.25rem); color: var(--ink-soft); max-width: 34ch; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: 2rem; }
+.hero-proof { display: flex; flex-wrap: wrap; gap: .6rem 1.6rem; margin-top: 2.2rem; font-size: .88rem; color: var(--ink-soft); }
+.hero-proof li { display: flex; align-items: center; gap: .5rem; }
+.hero-proof .icon { color: var(--gold-deep); }
+.stars { display: inline-flex; gap: 2px; color: var(--gold); }
+.stars .icon { width: 1.05em; height: 1.05em; }
+
+.hero-visual { position: relative; width: min(100%, 460px); margin-inline: auto; padding: 1rem 1rem 2.5rem; }
+.arch { position: relative; aspect-ratio: 5 / 6; border-radius: 999px 999px 32px 32px; overflow: hidden; border: 8px solid #fff; box-shadow: var(--shadow-lg); background: var(--pink-soft); }
+.arch .img { position: absolute; inset: 0; background-position: 50% 60%; transform: scale(1.04); animation: slowzoom 18s ease-in-out infinite alternate; }
+@keyframes slowzoom { to { transform: scale(1.14); } }
+.arch-ring { position: absolute; inset: 0; margin: auto; width: 100%; height: 100%; z-index: -1; border-radius: 999px 999px 32px 32px; border: 2px dashed var(--gold); transform: translate(18px, 14px); }
+.badge-spin { position: absolute; top: -.2rem; right: -.6rem; width: 118px; height: 118px; border-radius: 50%; background: var(--red); color: #fff; display: grid; place-items: center; box-shadow: var(--shadow-md); z-index: 3; }
+.badge-spin svg.ring { position: absolute; inset: 0; width: 100%; height: 100%; animation: spin 22s linear infinite; }
+.badge-spin text { font: 600 13.5px var(--font-body); letter-spacing: .08em; fill: #fff; }
+.badge-spin .wheat-mini { width: 34px; height: 54px; color: var(--gold-soft); }
+@keyframes spin { to { transform: rotate(360deg); } }
+.float-card { position: absolute; z-index: 3; display: flex; align-items: center; gap: .7rem; padding: .7rem 1rem; background: rgba(255,255,255,.92); border-radius: 18px; box-shadow: var(--shadow-md); font-size: .82rem; line-height: 1.3; animation: floaty 7s ease-in-out infinite; }
+.float-card strong { display: block; font-size: .92rem; }
+.fc-rating { left: -.4rem; bottom: 1.6rem; }
+.fc-thumb { right: -.3rem; bottom: 5.5rem; padding: .4rem; border-radius: 50%; animation-delay: -3s; }
+.fc-thumb .img { width: 92px; height: 92px; border-radius: 50%; border: 4px solid #fff; background-position: 50% 20%; }
+.fc-rating .dot { width: 38px; height: 38px; border-radius: 50%; background: var(--pink-soft); color: var(--red); display: grid; place-items: center; }
+
+@media (min-width: 560px) { .badge-spin { width: 132px; height: 132px; right: -1.4rem; } }
+@media (min-width: 960px) {
+  .hero-grid { grid-template-columns: 1.08fr .92fr; gap: 2rem; }
+  .hero-visual { margin-right: 0; width: 100%; max-width: 480px; justify-self: end; }
+}
+
+/* Cinta de texto en movimiento */
+.ribbon { background: var(--red); color: #fff; overflow: hidden; padding: .85rem 0; transform: rotate(-1deg) scale(1.02); margin-block: -.4rem; position: relative; z-index: 4; box-shadow: 0 8px 26px rgba(200, 16, 46, .3); }
+.ribbon-track { display: flex; width: max-content; animation: marquee 32s linear infinite; }
+.ribbon-track span { font-family: var(--font-script); font-weight: 700; font-size: 1.5rem; display: inline-flex; align-items: center; gap: 1.4rem; padding-right: 1.4rem; white-space: nowrap; }
+.ribbon-track span::after { content: "✦"; color: var(--gold-soft); font-family: var(--font-body); font-size: 1rem; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* ==========================================================================
+   5. PRODUCTOS (tarjetas interactivas)
+   ========================================================================== */
+.cards { display: grid; gap: 1.6rem; }
+.card {
+  position: relative; display: flex; flex-direction: column; overflow: hidden; background: #fff;
+  border-radius: var(--radius); box-shadow: var(--shadow-sm); border: 1px solid rgba(212, 175, 55, .28);
+  transition: transform .5s var(--ease), box-shadow .5s var(--ease);
+}
+.card::before { /* brillo que sigue al cursor */
+  content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none; opacity: 0; transition: opacity .4s;
+  background: radial-gradient(380px circle at var(--mx, 50%) var(--my, 50%), rgba(229, 193, 133, .28), transparent 60%);
+}
+.card:hover { transform: translateY(-10px); box-shadow: var(--shadow-lg); }
+.card:hover::before { opacity: 1; }
+.card-media { position: relative; height: 260px; margin: .7rem .7rem 0; overflow: hidden; }
+.card-media .img { position: absolute; inset: 0; width: 100%; height: 100%; transition: transform .9s var(--ease); }
+.card:hover .card-media .img { transform: scale(1.08); }
+.card-1 .card-media { border-radius: 999px 999px 18px 18px; }
+.card-2 .card-media { border-radius: 18px 18px 18px 120px; }
+.card-3 .card-media { border-radius: 18px 120px 18px 18px; }
+.card-1 .img { background-position: 50% 30%; }
+.card-2 .img { background-position: 50% 38%; }
+.card-3 .img { background-position: 50% 45%; }
+.card-2 .card-tag { left: auto; right: 1rem; }
+.card-tag { position: absolute; left: 1rem; bottom: 1rem; z-index: 2; background: rgba(255,255,255,.94); color: var(--red); font-size: .74rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: .35rem .8rem; border-radius: 999px; }
+.card-body { padding: 1.5rem 1.6rem 1.8rem; display: flex; flex-direction: column; gap: .9rem; flex: 1; }
+.card-body h3 { font-size: 1.55rem; }
+.card-body p { color: var(--ink-soft); font-size: .96rem; }
+.chips { display: flex; flex-wrap: wrap; gap: .45rem; }
+.chips li { font-size: .76rem; font-weight: 600; padding: .28rem .75rem; border-radius: 999px; background: var(--pink-soft); color: var(--red-dark); }
+.card-2 .chips li { background: #FBF1DC; color: var(--gold-deep); }
+.card-3 .chips li { background: var(--sky-soft); color: #1F5C78; }
+.card-link { margin-top: auto; padding-top: .6rem; display: inline-flex; align-items: center; gap: .5rem; font-weight: 700; color: var(--red); }
+.card-link .icon { transition: transform .35s var(--ease); }
+.card:hover .card-link .icon { transform: translateX(6px); }
+
+@media (min-width: 560px) and (max-width: 959px) { .cards { grid-template-columns: repeat(2, 1fr); } .card-3 { grid-column: 1 / -1; } }
+@media (min-width: 960px) {
+  .cards { grid-template-columns: repeat(3, 1fr); align-items: start; }
+  .card-2 { margin-top: 3.2rem; }              /* asimetría sutil */
+  .card-3 { margin-top: 1.2rem; }
+  .card-media { height: 300px; }
+}
+
+/* ==========================================================================
+   6. PORTAFOLIO DE PASTELES
+   ========================================================================== */
+.portfolio { background: linear-gradient(180deg, var(--pink-soft), var(--cream) 90%); }
+.gallery { display: grid; gap: 1rem; }
+.g-item { position: relative; min-height: 300px; border-radius: var(--radius); overflow: hidden; border: 0; padding: 0; text-align: left; box-shadow: var(--shadow-md); background: var(--pink); }
+.g-item .img { position: absolute; inset: 0; transition: transform 1s var(--ease); }
+.g-item:hover .img, .g-item:focus-visible .img { transform: scale(1.07); }
+.g-item::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(43, 23, 20, .78), rgba(43, 23, 20, 0) 55%); }
+.g-cap { position: absolute; z-index: 2; left: 0; right: 0; bottom: 0; padding: 1.4rem 1.5rem; color: #fff; transform: translateY(8px); transition: transform .5s var(--ease); }
+.g-item:hover .g-cap, .g-item:focus-visible .g-cap { transform: none; }
+.g-cap small { font-family: var(--font-script); font-weight: 700; font-size: 1.35rem; color: var(--gold-soft); display: block; line-height: 1; margin-bottom: .2rem; }
+.g-cap h3 { font-size: 1.4rem; }
+.g-cap span { display: block; margin-top: .4rem; font-size: .88rem; opacity: .9; max-width: 38ch; }
+.g-zoom { position: absolute; z-index: 2; top: 1rem; right: 1rem; width: 42px; height: 42px; border-radius: 50%; background: rgba(255,255,255,.92); color: var(--red); display: grid; place-items: center; transform: scale(.7); opacity: 0; transition: all .4s var(--ease); }
+.g-item:hover .g-zoom, .g-item:focus-visible .g-zoom { transform: none; opacity: 1; }
+.g-a .img { background-position: 50% 40%; }
+.g-b .img { background-position: 50% 30%; }
+.g-b { min-height: 420px; }
+@media (min-width: 760px) {
+  .gallery { grid-template-columns: 1.2fr .85fr; grid-template-rows: repeat(2, minmax(330px, 1fr)); }
+  .g-b { grid-column: 2; grid-row: 1 / span 2; min-height: 0; border-radius: 999px 999px var(--radius) var(--radius); }
+  .g-b .g-cap { padding-bottom: 2rem; text-align: center; }
+  .g-b .g-cap span { margin-inline: auto; }
+}
+.portfolio-cta { margin-top: 2.5rem; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 1rem 1.6rem; text-align: center; }
+.portfolio-cta p { color: var(--ink-soft); }
+
+/* Lightbox */
+.lightbox { border: 0; padding: 0; background: transparent; max-width: min(900px, 94vw); width: 100%; margin: auto; overflow: visible; }
+.lightbox::backdrop { background: rgba(43, 23, 20, .82); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.lb-card { background: #fff; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg); animation: pop .45s var(--ease); }
+.lb-img { height: min(62vh, 560px); }
+.lb-info { padding: 1.2rem 1.5rem 1.5rem; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between; }
+.lb-info h3 { font-size: 1.35rem; } .lb-info p { color: var(--ink-soft); font-size: .92rem; }
+.lb-close { position: absolute; top: -14px; right: -6px; z-index: 5; width: 44px; height: 44px; border-radius: 50%; border: 0; background: var(--red); color: #fff; display: grid; place-items: center; box-shadow: var(--shadow-md); }
+@keyframes pop { from { opacity: 0; transform: translateY(20px) scale(.96); } }
+
+/* ==========================================================================
+   7. BRUNCH Y MENÚ
+   ========================================================================== */
+.brunch { background: var(--cocoa); color: #F7EBDD; overflow: hidden; }
+.brunch::before { content: ""; position: absolute; width: 520px; height: 520px; right: -200px; top: -160px; border-radius: 50%; background: radial-gradient(circle, rgba(212, 175, 55, .22), transparent 68%); }
+.brunch .eyebrow { color: var(--gold-soft); }
+.brunch .section-head p { color: #D9C6B4; }
+.brunch-grid { position: relative; display: grid; gap: 3rem; align-items: start; }
+.brunch-visual { position: relative; max-width: 520px; margin-inline: auto; width: 100%; }
+.brunch-photo { aspect-ratio: 4 / 5; border-radius: 999px 999px 28px 28px; overflow: hidden; border: 6px solid rgba(229, 193, 133, .85); box-shadow: 0 30px 70px rgba(0,0,0,.45); }
+.brunch-photo .img { width: 100%; height: 100%; background-position: 52% 50%; }
+.sticker { position: absolute; left: -.6rem; bottom: 2rem; background: var(--gold-soft); color: var(--cocoa); border-radius: 50%; width: 122px; height: 122px; display: grid; place-items: center; text-align: center; font-weight: 700; font-size: .72rem; line-height: 1.25; letter-spacing: .05em; text-transform: uppercase; transform: rotate(-10deg); box-shadow: var(--shadow-md); animation: floaty 6s ease-in-out infinite; }
+.sticker b { display: block; font-family: var(--font-display); font-size: 1.2rem; letter-spacing: 0; text-transform: none; line-height: 1.05; color: var(--red); }
+
+.tabs { display: flex; gap: .5rem; overflow-x: auto; padding-bottom: .4rem; margin-bottom: 1.4rem; scrollbar-width: none; }
+.tabs::-webkit-scrollbar { display: none; }
+.tab { flex: none; padding: .6rem 1.2rem; border-radius: 999px; border: 1.5px solid rgba(229, 193, 133, .5); background: transparent; color: #F7EBDD; font-weight: 600; font-size: .9rem; transition: all .3s var(--ease); }
+.tab:hover { border-color: var(--gold-soft); transform: translateY(-2px); }
+.tab[aria-selected="true"] { background: var(--gold-soft); color: var(--cocoa); border-color: var(--gold-soft); }
+.menu-panel { animation: fadeup .5s var(--ease); }
+@keyframes fadeup { from { opacity: 0; transform: translateY(12px); } }
+.menu-group + .menu-group { margin-top: 1.6rem; }
+.menu-group h4 { font-family: var(--font-script); font-size: 1.6rem; color: var(--gold-soft); margin-bottom: .6rem; }
+.menu-item { padding: .8rem 0; border-bottom: 1px dashed rgba(229, 193, 133, .25); }
+.mi-top { display: flex; align-items: baseline; gap: .6rem; }
+.mi-name { font-weight: 700; }
+.menu-item p { font-size: .88rem; color: #CDB9A6; margin-top: .15rem; max-width: 56ch; }
+.menu-names { display: flex; flex-wrap: wrap; gap: .5rem; }
+.menu-names li { padding: .3rem .85rem; border-radius: 999px; background: rgba(255,255,255,.08); font-size: .88rem; }
+.menu-note { margin-top: 1.2rem; font-size: .82rem; color: #BFA994; font-style: italic; }
+.brunch-cta { margin-top: 1.8rem; display: flex; flex-wrap: wrap; gap: .8rem; }
+.brunch .btn-ghost { --fg: #F7EBDD; --bd: var(--gold-soft); }
+.brunch .btn-ghost:hover { --bg: var(--gold-soft); --fg: var(--cocoa); }
+@media (min-width: 960px) {
+  .brunch-grid { grid-template-columns: .8fr 1.2fr; gap: 4rem; }
+  .brunch-visual { position: sticky; top: calc(var(--header-h) + 2rem); }
+}
+
+/* ==========================================================================
+   8. SOBRE NOSOTROS
+   ========================================================================== */
+.about-grid { display: grid; gap: 3.5rem; align-items: center; }
+.collage { position: relative; min-height: 440px; max-width: 520px; margin-inline: auto; width: 100%; }
+.polaroid { position: absolute; background: #fff; padding: 10px 10px 34px; box-shadow: var(--shadow-md); border-radius: 6px; transition: transform .5s var(--ease); }
+.polaroid .img { width: 100%; height: 100%; }
+.polaroid:hover { transform: rotate(0) scale(1.04) !important; z-index: 5; }
+.polaroid.p1 { width: 62%; aspect-ratio: 1 / 1.1; left: 0; top: 0; transform: rotate(-5deg); }
+.polaroid.p2 { width: 48%; aspect-ratio: 1 / 1.35; right: 0; top: 14%; transform: rotate(5deg); z-index: 2; }
+.polaroid.p1 .img { background-position: 38% 50%; }
+.polaroid.p2 .img { background-position: 50% 20%; }
+.polaroid::before { content: ""; position: absolute; top: -12px; left: 50%; width: 76px; height: 24px; margin-left: -38px; background: rgba(229, 193, 133, .7); transform: rotate(-3deg); }
+.collage-logo { position: absolute; left: 12%; bottom: 0; width: 62%; aspect-ratio: 1.55; background: #fff var(--img-logo) center / 82% no-repeat; border-radius: 50% / 46%; box-shadow: var(--shadow-md); z-index: 3; border: 3px solid var(--gold-soft); }
+.about-copy p { color: var(--ink-soft); font-size: 1.05rem; margin-top: 1.1rem; }
+.pillars { display: grid; gap: 1rem; margin-top: 2rem; }
+.pillar { display: flex; gap: 1rem; align-items: flex-start; padding: 1rem 1.1rem; background: #fff; border-radius: 18px; box-shadow: var(--shadow-sm); border: 1px solid rgba(212, 175, 55, .25); transition: transform .4s var(--ease), box-shadow .4s; }
+.pillar:hover { transform: translateX(6px); box-shadow: var(--shadow-md); }
+.pillar .ico { flex: none; width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; background: var(--pink-soft); color: var(--red); }
+.pillar:nth-child(2) .ico { background: #FBF1DC; color: var(--gold-deep); }
+.pillar:nth-child(3) .ico { background: var(--sky-soft); color: #1F5C78; }
+.pillar h3 { font-size: 1.05rem; font-family: var(--font-body); font-weight: 700; letter-spacing: 0; }
+.pillar p { margin: .15rem 0 0; font-size: .9rem; }
+@media (min-width: 900px) { .about-grid { grid-template-columns: .95fr 1.05fr; gap: 5rem; } .collage { min-height: 540px; } }
+
+/* ==========================================================================
+   9. TESTIMONIOS
+   ========================================================================== */
+.reviews { background: var(--sky-soft); overflow: hidden; }
+.reviews::before, .reviews::after { content: ""; position: absolute; border-radius: 50%; z-index: 0; }
+.reviews::before { width: 340px; height: 340px; background: var(--pink); opacity: .45; left: -120px; bottom: -120px; }
+.reviews::after  { width: 220px; height: 220px; background: var(--gold-soft); opacity: .4; right: -60px; top: 40px; }
+.reviews .container { position: relative; z-index: 1; }
+.t-wrap { position: relative; max-width: 860px; margin-inline: auto; background: #fff; border-radius: 36px 36px 36px 8px; padding: clamp(2rem, 5vw, 3.5rem); box-shadow: var(--shadow-lg); }
+.t-wrap::before { content: "“"; position: absolute; top: -.1em; left: .35rem; font-family: var(--font-display); font-size: 9rem; line-height: 1; color: var(--pink); }
+.t-track { display: grid; }
+.t-slide { grid-area: 1 / 1; opacity: 0; visibility: hidden; transform: translateX(24px); transition: opacity .6s var(--ease), transform .6s var(--ease), visibility .6s; position: relative; }
+.t-slide.is-active { opacity: 1; visibility: visible; transform: none; }
+.t-slide blockquote { margin: 0; font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: clamp(1.25rem, 3.4vw, 1.8rem); line-height: 1.4; position: relative; }
+.t-meta { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; margin-top: 1.4rem; }
+.t-chip { font-size: .76rem; font-weight: 600; padding: .3rem .8rem; border-radius: 999px; background: #FBF1DC; color: var(--gold-deep); }
+.t-author { display: flex; align-items: center; gap: .9rem; margin-top: 1.8rem; }
+.avatar { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: var(--red); color: #fff; font-family: var(--font-display); font-weight: 700; font-size: 1.2rem; box-shadow: 0 0 0 4px var(--pink-soft); }
+.t-slide:nth-child(2) .avatar { background: var(--gold-deep); }
+.t-slide:nth-child(3) .avatar { background: #2C7A9E; }
+.t-author strong { display: block; }
+.t-controls { display: flex; align-items: center; justify-content: space-between; margin-top: 2rem; padding-top: 1.4rem; border-top: 1px dashed rgba(138, 101, 16, .3); }
+.dots { display: flex; gap: .55rem; }
+.dot-btn { width: 11px; height: 11px; padding: 0; border-radius: 99px; border: 0; background: var(--pink); transition: all .4s var(--ease); }
+.dot-btn[aria-current="true"] { width: 34px; background: var(--red); }
+.arrows { display: flex; gap: .6rem; }
+.arrow-btn { width: 46px; height: 46px; border-radius: 50%; border: 1.5px solid var(--gold); background: transparent; color: var(--ink); display: grid; place-items: center; transition: all .3s var(--ease); }
+.arrow-btn:hover { background: var(--red); border-color: var(--red); color: #fff; transform: scale(1.08); }
+.rating-sum { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .6rem 1rem; margin-top: 2rem; color: var(--ink-soft); font-size: .95rem; }
+.rating-sum b { font-family: var(--font-display); font-size: 1.7rem; color: var(--ink); }
+
+/* ==========================================================================
+   10. CTA FINAL + FORMULARIO
+   ========================================================================== */
+.contact { background: var(--red); color: #fff; overflow: hidden; }
+.contact::before { content: ""; position: absolute; inset: 0; opacity: .12; background-image: radial-gradient(circle at 1px 1px, #fff 1.4px, transparent 1.6px); background-size: 26px 26px; }
+.contact::after { content: ""; position: absolute; width: 420px; height: 420px; border-radius: 50%; right: -160px; top: -160px; background: radial-gradient(circle, rgba(229, 193, 133, .5), transparent 70%); }
+.contact-grid { position: relative; z-index: 1; display: grid; gap: 3rem; align-items: center; }
+.contact h2 { font-size: clamp(2.4rem, 7vw, 4.4rem); }
+.contact h2 .script { color: var(--gold-soft); display: block; font-size: 1.1em; }
+.contact .lead { margin-top: 1.2rem; font-size: 1.1rem; color: #FFE3E7; max-width: 42ch; }
+.btn-giant { margin-top: 2.2rem; width: 100%; padding: 1.35rem 1.8rem; font-size: clamp(1.1rem, 3.6vw, 1.45rem); gap: .9rem; animation: pulse 2.6s ease-in-out infinite; }
+.btn-giant .icon { color: var(--wa); width: 1.7em; height: 1.7em; }
+@keyframes pulse { 0%, 100% { box-shadow: 0 12px 30px rgba(0,0,0,.25), 0 0 0 0 rgba(255,255,255,.55); } 60% { box-shadow: 0 12px 30px rgba(0,0,0,.25), 0 0 0 18px rgba(255,255,255,0); } }
+.contact-facts { margin-top: 1.8rem; display: grid; gap: .8rem; font-size: .96rem; }
+.contact-facts li { display: flex; gap: .8rem; align-items: center; }
+.contact-facts .icon { color: var(--gold-soft); }
+
+.form-card { background: var(--cream); color: var(--ink); border-radius: 30px; padding: clamp(1.6rem, 4vw, 2.6rem); box-shadow: 0 40px 80px rgba(0,0,0,.3); position: relative; }
+.form-card h3 { font-size: 1.6rem; }
+.form-card .sub { color: var(--ink-soft); font-size: .92rem; margin: .3rem 0 1.4rem; }
+.field { margin-bottom: 1.1rem; position: relative; }
+.field label { display: block; font-size: .82rem; font-weight: 700; margin-bottom: .35rem; letter-spacing: .02em; }
+.field input, .field select, .field textarea {
+  width: 100%; padding: .85rem 1rem; font: inherit; font-size: 1rem; color: var(--ink);
+  background: #fff; border: 1.5px solid #E6D9C8; border-radius: 14px; transition: border-color .25s, box-shadow .25s;
+}
+.field textarea { resize: vertical; min-height: 110px; }
+.field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 4px rgba(212, 175, 55, .22); }
+.field.invalid input, .field.invalid select, .field.invalid textarea { border-color: var(--red); background: #FFF6F7; }
+.field.valid input, .field.valid select, .field.valid textarea { border-color: #2E9E5B; }
+.field .error { display: none; margin-top: .35rem; font-size: .8rem; color: var(--red); font-weight: 600; }
+.field.invalid .error { display: block; animation: shake .4s; }
+.field .count { position: absolute; right: .2rem; top: .05rem; font-size: .72rem; color: var(--ink-soft); pointer-events: none; }
+@keyframes shake { 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
+.form-row { display: grid; gap: 0 1rem; }
+@media (min-width: 560px) { .form-row { grid-template-columns: 1fr 1fr; } }
+.btn-submit { width: 100%; margin-top: .4rem; }
+.btn-submit .spinner { display: none; width: 1.2em; height: 1.2em; border: 3px solid rgba(255,255,255,.4); border-top-color: #fff; border-radius: 50%; animation: spin .7s linear infinite; }
+.btn-submit.loading .spinner { display: block; } .btn-submit.loading .label { opacity: .8; }
+.form-note { margin-top: .9rem; font-size: .78rem; color: var(--ink-soft); text-align: center; }
+.success { display: none; text-align: center; padding: 1.5rem .5rem; }
+.form-card.sent form { display: none; } .form-card.sent .success { display: block; animation: pop .6s var(--ease); }
+.check { width: 92px; height: 92px; margin: 0 auto 1.2rem; }
+.check circle { fill: #E8F6EE; stroke: #2E9E5B; stroke-width: 3; stroke-dasharray: 260; stroke-dashoffset: 260; animation: draw .8s .1s forwards; }
+.check path { fill: none; stroke: #2E9E5B; stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 60; stroke-dashoffset: 60; animation: draw .5s .7s forwards; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+.success h3 { font-size: 1.7rem; } .success p { color: var(--ink-soft); margin: .6rem 0 1.4rem; }
+.confetti { position: fixed; top: -20px; z-index: 300; width: 10px; height: 16px; border-radius: 2px; pointer-events: none; animation: fall var(--t, 2.6s) linear forwards; }
+@keyframes fall { to { transform: translate3d(var(--x, 0), 105vh, 0) rotate(var(--r, 540deg)); opacity: .9; } }
+@media (min-width: 960px) { .contact-grid { grid-template-columns: 1fr 1fr; gap: 5rem; } .btn-giant { width: auto; } }
+
+/* ==========================================================================
+   11. VISÍTANOS (mapa)
+   ========================================================================== */
+.visit { padding-block: clamp(3.5rem, 8vw, 6rem); }
+.visit-grid { display: grid; gap: 1.4rem; }
+.map-frame { border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md); border: 6px solid #fff; min-height: 320px; background: var(--cream-2); }
+.map-frame iframe { width: 100%; height: 100%; min-height: 320px; border: 0; display: block; filter: sepia(.15) saturate(1.1); }
+.visit-card { background: #fff; border-radius: var(--radius); padding: 2rem; box-shadow: var(--shadow-sm); border: 1px solid rgba(212, 175, 55, .3); display: flex; flex-direction: column; gap: 1.2rem; justify-content: center; }
+.visit-card h2 { font-size: clamp(1.8rem, 4vw, 2.4rem); }
+.visit-card li { display: flex; gap: .9rem; align-items: flex-start; }
+.visit-card li .icon { color: var(--red); margin-top: .2rem; }
+.visit-card li strong { display: block; }
+@media (min-width: 900px) { .visit-grid { grid-template-columns: .8fr 1.2fr; } .map-frame { min-height: 420px; } }
+
+/* ==========================================================================
+   12. FOOTER
+   ========================================================================== */
+.site-footer { background: var(--cocoa); color: #E8D8C6; padding: 4rem 0 2rem; position: relative; }
+.site-footer::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: repeating-linear-gradient(90deg, var(--gold) 0 18px, var(--gold-soft) 18px 36px, var(--pink) 36px 54px, var(--sky) 54px 72px); }
+.footer-grid { display: grid; gap: 2.4rem; }
+.footer-brand p { margin-top: .8rem; max-width: 32ch; font-size: .92rem; color: #CDB9A6; }
+.site-footer h4 { font-family: var(--font-body); font-size: .8rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold-soft); margin-bottom: 1rem; }
+.footer-list { display: grid; gap: .6rem; font-size: .92rem; }
+.footer-list a:hover { color: var(--gold-soft); }
+.footer-list li { display: flex; gap: .6rem; }
+.footer-list .icon { color: var(--gold); margin-top: .22rem; width: 1.1em; height: 1.1em; }
+.footer-bottom { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid rgba(229, 193, 133, .22); display: flex; flex-wrap: wrap; justify-content: space-between; gap: .6rem; font-size: .82rem; color: #BFA994; }
+@media (min-width: 760px) { .footer-grid { grid-template-columns: 1.4fr 1fr; } }
+
+/* Botón flotante de WhatsApp */
+.fab { position: fixed; right: 1rem; bottom: 1rem; z-index: 90; width: 62px; height: 62px; border-radius: 50%; background: var(--wa); color: #fff; display: grid; place-items: center; box-shadow: 0 10px 28px rgba(0,0,0,.28); transform: scale(0); transition: transform .5s var(--ease); }
+.fab.show { transform: scale(1); }
+.fab:hover { transform: scale(1.1) rotate(-6deg); }
+.fab .icon { width: 32px; height: 32px; }
+.fab::before { content: ""; position: absolute; inset: 0; border-radius: 50%; border: 2px solid var(--wa); animation: ping 2.2s ease-out infinite; }
+@keyframes ping { to { transform: scale(1.7); opacity: 0; } }
+
+/* Respeta a quienes prefieren menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .js .reveal:not(.is-visible) { opacity: 1; }
+}
+</style>
+
+<!-- Recursos gráficos originales externalizados en /assets para caché y carga independiente. -->
+<style id="assets">
+:root {
+  --img-logo:     url('assets/logo.png');
+  --img-rosas:    url('assets/rosas.jpg');
+  --img-gabriela: url('assets/gabriela.jpg');
+  --img-titanic:  url('assets/titanic.jpg');
+  --img-latte:    url('assets/latte.jpg');
+  --img-menu:     url('assets/menu.jpg');
+}
+</style>
+  <link rel="stylesheet" href="assets/kenia-v2.css">
+</head>
+
+<body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+<!-- Sprite de iconos SVG -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.39-1.47-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.06 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35m-5.42 7.4h-.01a9.87 9.87 0 0 1-5.03-1.38l-.36-.21-3.74.98 1-3.65-.24-.37a9.86 9.86 0 0 1-1.51-5.26c0-5.45 4.44-9.88 9.89-9.88 2.64 0 5.12 1.03 6.99 2.9a9.83 9.83 0 0 1 2.89 6.99c0 5.45-4.44 9.88-9.88 9.88m8.41-18.3A11.8 11.8 0 0 0 12.05 0C5.5 0 .16 5.34.16 11.89c0 2.1.55 4.14 1.59 5.95L.06 24l6.3-1.65a11.88 11.88 0 0 0 5.69 1.45h.01c6.55 0 11.89-5.34 11.89-11.89a11.82 11.82 0 0 0-3.49-8.41Z"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21.500s7-6 7-11.600A7 7 0 0 0 5 9.900c0 5.600 7 11.600 7 11.600Z" class="s"/><circle cx="12" cy="9.800" r="2.600" class="s"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.500 1.500a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2Z" class="s"/></symbol>
+  <clipPath id="half-clip"><rect width="12" height="24"/></clipPath>
+  <symbol id="i-star-half" viewBox="0 0 24 24"><path fill="currentColor" opacity=".3" d="m12 2.200 2.900 6.200 6.800.8-5 4.700 1.300 6.700L12 17.200 6 20.600l1.300-6.700-5-4.700 6.800-.8L12 2.200Z"/><path fill="currentColor" clip-path="url(#half-clip)" d="m12 2.200 2.900 6.200 6.800.8-5 4.700 1.300 6.700L12 17.200 6 20.600l1.300-6.700-5-4.700 6.800-.8L12 2.200Z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 2.200 2.900 6.200 6.800.8-5 4.700 1.300 6.700L12 17.200 6 20.600l1.300-6.700-5-4.700 6.800-.8L12 2.200Z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6" class="s"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path d="M20 12H5m6-6-6 6 6 6" class="s"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" class="s"/></symbol>
+  <symbol id="i-zoom" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.500" class="s"/><path d="m20 20-4.200-4.200M11 8.500v5M8.500 11h5" class="s"/></symbol>
+  <symbol id="i-cake" viewBox="0 0 24 24"><path d="M4 20h16v-6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v6Zm0-3c2 1.500 3 1.500 4 0s2-1.500 4 0 3 1.500 4 0 2-1.500 4 0M12 12V8m0-5c1 1.200 1 2 0 3-1-1-1-1.800 0-3Z" class="s"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19c0-8 5-14 15-15 0 10-5 15-13 15m-2 2c2-5 5-8 9-10" class="s"/></symbol>
+  <symbol id="i-hand" viewBox="0 0 24 24"><path d="M8 12V5.500a1.500 1.500 0 0 1 3 0V11m0-1V4.500a1.500 1.500 0 0 1 3 0V11m0-4.500a1.500 1.500 0 0 1 3 0V13m0-3.500a1.500 1.500 0 0 1 3 0V15c0 4-3 7-7 7-3 0-4.500-1.500-6.500-4.500L3.500 14a1.500 1.500 0 0 1 2.500-1.500L8 15" class="s"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3 12.500V4h8.500l9 9-8.500 8.500-9-9Z" class="s"/><circle cx="7.500" cy="8.500" r="1.300" fill="currentColor"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24"><path d="m21 3-9.500 18-2.300-7.700L1.500 11 21 3Zm-11.800 10.300L21 3" class="s"/></symbol>
+  <!-- Espiga de trigo reutilizable -->
+  <symbol id="i-wheat" viewBox="0 0 40 120"><path d="M20 118V22" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><ellipse cx="20" cy="13" rx="4.6" ry="10" fill="currentColor"/><ellipse cx="11" cy="36" rx="4.4" ry="10" fill="currentColor" transform="rotate(-38 11 36)"/><ellipse cx="29" cy="36" rx="4.4" ry="10" fill="currentColor" transform="rotate(38 29 36)"/><ellipse cx="11" cy="54" rx="4.4" ry="10" fill="currentColor" transform="rotate(-38 11 54)"/><ellipse cx="29" cy="54" rx="4.4" ry="10" fill="currentColor" transform="rotate(38 29 54)"/><ellipse cx="11" cy="72" rx="4.4" ry="10" fill="currentColor" transform="rotate(-38 11 72)"/><ellipse cx="29" cy="72" rx="4.4" ry="10" fill="currentColor" transform="rotate(38 29 72)"/><ellipse cx="11" cy="90" rx="4.4" ry="10" fill="currentColor" transform="rotate(-38 11 90)"/><ellipse cx="29" cy="90" rx="4.4" ry="10" fill="currentColor" transform="rotate(38 29 90)"/></symbol>
+</svg>
+
+<!-- ============================ NAVBAR ============================ -->
+<header class="site-header" id="header">
+  <div class="container nav">
+    <a class="brand" href="#inicio" aria-label="Kenia, panadería y pastelería — ir al inicio"></a>
+
+    <nav id="menu" class="nav-menu" aria-label="Principal">
+      <a class="nav-link" href="#inicio">Inicio</a>
+      <a class="nav-link" href="#pasteles">Pasteles</a>
+      <a class="nav-link" href="#brunch">Brunch</a>
+      <a class="nav-link" href="#preguntas">Preguntas</a>
+      <a class="nav-link" href="#contacto">Contacto</a>
+      <a class="btn btn-sm" data-wa="Hola Kenia, quiero hacer un pedido." href="https://wa.me/573227646484" target="_blank" rel="noopener">
+        <svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg> Pedir por WhatsApp
+      </a>
+    </nav>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="menu" aria-label="Abrir menú"><span class="bars"></span></button>
+  </div>
+</header>
+
+<main id="contenido">
+
+<!-- ============================ HERO ============================ -->
+<section class="hero" id="inicio" aria-labelledby="hero-title">
+
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow reveal">Panadería &amp; Pastelería artesanal · Bogotá</p>
+      <h1 id="hero-title" class="reveal" style="--d:.1s">Endulzamos tus momentos <span class="script">más especiales</span></h1>
+      <p class="lead reveal" style="--d:.2s">Pasteles personalizados, panadería fresca y el mejor brunch de Bogotá.</p>
+      <div class="hero-actions reveal" style="--d:.3s">
+        <a class="btn" href="#pasteles">Ver nuestros pasteles <svg class="icon icon-stroke" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-ghost" data-wa="Hola Kenia, quiero reservar una mesa para brunch." href="https://wa.me/573227646484" target="_blank" rel="noopener">Reservar Brunch</a>
+      </div>
+      <ul class="hero-proof reveal" style="--d:.4s">
+        <li><span class="stars" aria-hidden="true"><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star-half"/></svg></span> 4.5 estrellas en Google Maps</li>
+        <li><svg class="icon icon-stroke" aria-hidden="true"><use href="#i-pin"/></svg> Cl. 39 Bis Sur · Bogotá</li>
+      </ul>
+    </div>
+
+    <div class="hero-visual reveal" data-reveal="zoom" style="--d:.2s">
+      <div class="arch">
+        <div class="img img-rosas" role="img" aria-label="Pastel blanco decorado con rosas de crema rosadas y detalles dorados"></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Atributos principales de la oferta -->
+<div class="ribbon" aria-label="Productos y servicios">
+  <div class="ribbon-track">
+    <span>Pasteles personalizados</span>
+    <span>Pan recién horneado</span>
+    <span>Ponqués frescos</span>
+    <span>Desayunos y café</span>
+  </div>
+</div>
+
+<!-- ============================ PRODUCTOS ============================ -->
+<section class="section" id="productos" aria-labelledby="productos-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Lo que hacemos</p>
+      <h2 id="productos-title">Hecho a mano, <span class="script">con cariño</span> cada día</h2>
+      <p>Del pan de la mañana al pastel de la fiesta: todo lo horneamos fresco, con ingredientes de calidad y mucha dedicación.</p>
+    </div>
+
+    <div class="cards">
+      <article class="card card-1 reveal" style="--d:.05s">
+        <div class="card-media">
+          <div class="img img-titanic lazy-bg" data-bg-var="--img-titanic" role="img" aria-label="Pastel temático con un barco decorativo sobre olas de crema azul"></div>
+          <span class="card-tag">Diseños temáticos</span>
+        </div>
+        <div class="card-body">
+          <h3>Pasteles Personalizados</h3>
+          <p>Diseños temáticos y elegantes para cumpleaños, graduaciones y cada celebración. Cuéntanos tu idea y la convertimos en un pastel único.</p>
+          <ul class="chips"><li>Temáticos</li><li>Con tu mensaje</li><li>Flores en crema</li></ul>
+          <a class="card-link" href="#pasteles">Ver portafolio <svg class="icon icon-stroke" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+
+      <article class="card card-2 reveal" style="--d:.15s">
+        <div class="card-media">
+          <div class="img img-menu lazy-bg" data-bg-var="--img-menu" role="img" aria-label="Menú de desayunos con combos, calentados y bebidas"></div>
+          <span class="card-tag">Recién horneado</span>
+        </div>
+        <div class="card-body">
+          <h3>Panadería Fresca</h3>
+          <p>Pan y ponqués recién horneados, con la variedad y la calidad que tu familia busca para el desayuno, la once o el antojo del día.</p>
+          <ul class="chips"><li>Pan fresco</li><li>Ponqués</li><li>Buenos precios</li></ul>
+          <a class="card-link" data-wa="Hola Kenia, ¿qué pan y ponqués tienen hoy?" href="https://wa.me/573227646484" target="_blank" rel="noopener">Preguntar qué hay hoy <svg class="icon icon-stroke" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+
+      <article class="card card-3 reveal" style="--d:.25s">
+        <div class="card-media">
+          <div class="img img-latte lazy-bg" data-bg-var="--img-latte" role="img" aria-label="Café latte con espuma servido con galletas en un ambiente cálido"></div>
+          <span class="card-tag">Ambiente cálido</span>
+        </div>
+        <div class="card-body">
+          <h3>Cafetería &amp; Brunch</h3>
+          <p>Un lugar acogedor para desayunar, hacer brunch y tomar buen café, con atención amable y precios accesibles para compartir.</p>
+          <ul class="chips"><li>Desayunos</li><li>Café</li><li>Precios accesibles</li></ul>
+          <a class="card-link" href="#brunch">Ver el menú <svg class="icon icon-stroke" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PORTAFOLIO ============================ -->
+<section class="section portfolio" id="pasteles" aria-labelledby="pasteles-title">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="eyebrow">Portafolio</p>
+      <h2 id="pasteles-title">Pasteles que cuentan <span class="script">historias</span></h2>
+      <p>Toca cualquier pastel para verlo más grande. Si te enamoras de uno, te lo hacemos a tu medida.</p>
+    </div>
+
+    <div class="gallery">
+      <button class="g-item g-a reveal" data-lb="gabriela" data-title="Con nombre y dedicatoria" data-desc="Detalles en crema y tu mensaje escrito a mano." type="button">
+        <div class="img img-gabriela lazy-bg" data-bg-var="--img-gabriela" role="img" aria-label="Pastel blanco con rombos rosados y el nombre Gabriela escrito en chocolate"></div>
+        <span class="g-zoom"><svg class="icon icon-stroke" aria-hidden="true"><use href="#i-zoom"/></svg></span>
+        <span class="g-cap"><small>Para celebrar</small><h3>Con tu nombre y mensaje</h3><span>Dedicatorias escritas a mano y decoración en crema.</span></span>
+      </button>
+      <button class="g-item g-b reveal" data-lb="titanic" data-title="Pastel temático" data-desc="Cualquier tema que imagines, hecho pastel." style="--d:.12s" type="button">
+        <div class="img img-titanic lazy-bg" data-bg-var="--img-titanic" role="img" aria-label="Pastel temático con un barco sobre olas de crema azul"></div>
+        <span class="g-zoom"><svg class="icon icon-stroke" aria-hidden="true"><use href="#i-zoom"/></svg></span>
+        <span class="g-cap"><small>Tu idea, en pastel</small><h3>Diseños temáticos</h3><span>Si lo puedes imaginar, lo podemos hornear.</span></span>
+      </button>
+      <button class="g-item g-c reveal" data-lb="rosas" data-title="Rosas de crema" data-desc="Elegancia floral para bodas, aniversarios y cumpleaños." style="--d:.2s" type="button">
+        <div class="img img-rosas lazy-bg" data-bg-var="--img-rosas" role="img" aria-label="Pastel con rosas de crema en tonos rosados y hojas verdes"></div>
+        <span class="g-zoom"><svg class="icon icon-stroke" aria-hidden="true"><use href="#i-zoom"/></svg></span>
+        <span class="g-cap"><small>Elegante y delicado</small><h3>Rosas de crema</h3><span>Flores artesanales y detalles dorados.</span></span>
+      </button>
+    </div>
+
+    <div class="portfolio-cta reveal">
+      <p>¿Tienes una idea o una foto de referencia?</p>
+      <a class="btn" data-wa="Hola Kenia, quiero cotizar un pastel personalizado. ¿Me pueden ayudar?" href="https://wa.me/573227646484" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg> Cotizar mi pastel</a>
+    </div>
+  </div>
+</section>
+
+<!-- Visor ampliado (lightbox) -->
+<dialog class="lightbox" id="lightbox" aria-label="Vista ampliada del pastel">
+  <button class="lb-close" id="lbClose" type="button" aria-label="Cerrar"><svg class="icon icon-stroke" aria-hidden="true"><use href="#i-close"/></svg></button>
+  <div class="lb-card">
+    <div class="lb-img img" id="lbImg" role="img" aria-label="Imagen ampliada del pastel seleccionado"></div>
+    <div class="lb-info">
+      <div><h3 id="lbTitle"></h3><p id="lbDesc"></p></div>
+      <a class="btn btn-sm" id="lbWa" href="https://wa.me/573227646484" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg> Quiero uno así</a>
+    </div>
+  </div>
+</dialog>
+
+<!-- ============================ BRUNCH ============================ -->
+<section class="section brunch" id="brunch" aria-labelledby="brunch-title">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="eyebrow">Cafetería &amp; Brunch</p>
+      <h2 id="brunch-title">Desayunos preparados <span class="script" style="color:var(--gold-soft)">a la minuta</span></h2>
+      <p>Excelente relación precio-calidad, buen ambiente y atención cercana. Mira el menú y reserva tu mesa por WhatsApp.</p>
+    </div>
+
+    <div class="brunch-grid">
+      <div class="brunch-visual reveal" data-reveal="left">
+        <div class="brunch-photo"><div class="img img-latte lazy-bg" data-bg-var="--img-latte" role="img" aria-label="Capuchino en vaso de vidrio con galletas sobre una mesa de madera"></div></div>
+        <div class="sticker" aria-hidden="true"><span>Preparado<b>al momento</b></span></div>
+      </div>
+
+      <div class="reveal" data-reveal="right">
+        <div class="tabs" role="tablist" aria-label="Categorías del menú" id="menuTabs"></div>
+        <div class="menu-panel" id="menuPanel" role="tabpanel" tabindex="0">
+          <noscript><p>Escríbenos por WhatsApp para conocer nuestro menú de desayunos y brunch.</p></noscript>
+        </div>
+        <p class="menu-note">Los desayunos se preparan a la minuta. Escríbenos por WhatsApp y te contamos precios y disponibilidad.</p>
+        <div class="brunch-cta">
+          <a class="btn" data-wa="Hola Kenia, quiero reservar una mesa para brunch. Somos ___ personas." href="https://wa.me/573227646484" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg> Reservar Brunch</a>
+          <a class="btn btn-ghost" href="#visitanos">Cómo llegar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SOBRE NOSOTROS ============================ -->
+<section class="section" id="nosotros" aria-labelledby="nosotros-title">
+  <div class="container about-grid">
+    <div class="collage reveal" data-reveal="left" aria-hidden="true">
+      <div class="polaroid p1"><div class="img img-gabriela lazy-bg" data-bg-var="--img-gabriela"></div></div>
+      <div class="polaroid p2"><div class="img img-titanic lazy-bg" data-bg-var="--img-titanic"></div></div>
+      <div class="collage-logo"></div>
+    </div>
+
+    <div class="about-copy reveal" data-reveal="right">
+      <p class="eyebrow">Sobre nosotros</p>
+      <h2 id="nosotros-title" style="font-size:clamp(2rem,5vw,3.2rem);margin-top:.6rem">Pasión por crear <span class="script">experiencias</span></h2>
+      <p>En <strong>Panadería y Pastelería Kenia</strong> creemos que un buen pan o un pastel bien hecho puede convertir cualquier día en una celebración. Horneamos de forma artesanal, con ingredientes frescos y mucha dedicación, para que cada familia de Bogotá encuentre aquí su sabor favorito.</p>
+      <div class="pillars">
+        <div class="pillar"><span class="ico"><svg class="icon icon-stroke" aria-hidden="true"><use href="#i-leaf"/></svg></span><div><h3>Ingredientes frescos</h3><p>Pan y ponqués horneados con productos de calidad, todos los días.</p></div></div>
+        <div class="pillar"><span class="ico"><svg class="icon icon-stroke" aria-hidden="true"><use href="#i-hand"/></svg></span><div><h3>Hecho a mano</h3><p>Cada pastel se decora con detalle, como si fuera para nuestra propia familia.</p></div></div>
+        <div class="pillar"><span class="ico"><svg class="icon icon-stroke" aria-hidden="true"><use href="#i-tag"/></svg></span><div><h3>Variedad y buen precio</h3><p>Opciones para todos los gustos y bolsillos, sin sacrificar calidad.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ TESTIMONIOS ============================ -->
+<section class="section reviews" id="opiniones" aria-labelledby="opiniones-title">
+  <div class="container">
+    <div class="section-head center reveal">
+      <p class="eyebrow">Lo que dicen de nosotros</p>
+      <h2 id="opiniones-title">Clientes que <span class="script">vuelven</span></h2>
+    </div>
+
+    <div class="t-wrap reveal" id="carousel" role="region" aria-roledescription="carrusel" aria-label="Reseñas de clientes">
+      <div class="t-track" aria-live="polite">
+        <figure class="t-slide is-active" style="margin:0">
+          <div class="stars" role="img" aria-label="5 de 5 estrellas"><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg></div>
+          <blockquote style="margin-top:1rem">En esta panadería hay muy buenos productos, los precios y la variedad son excelentes, buena calidad y buen servicio.</blockquote>
+          <div class="t-author"><span class="avatar" aria-hidden="true">B</span><figcaption><strong>Bilis Yara</strong><small>Cliente de la panadería</small></figcaption></div>
+        </figure>
+        <figure class="t-slide" style="margin:0" aria-hidden="true">
+          <div class="stars" role="img" aria-label="5 de 5 estrellas"><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg></div>
+          <blockquote style="margin-top:1rem">Excelente relación precio-calidad. Comida, servicio y ambiente: 5/5.</blockquote>
+          <div class="t-meta"><span class="t-chip">Brunch</span><span class="t-chip">Comida 5/5</span><span class="t-chip">Servicio 5/5</span><span class="t-chip">Ambiente 5/5</span></div>
+          <div class="t-author"><span class="avatar" aria-hidden="true">A</span><figcaption><strong>Alejandro Garces</strong><small>Visitó para brunch</small></figcaption></div>
+        </figure>
+        <figure class="t-slide" style="margin:0" aria-hidden="true">
+          <div class="stars" role="img" aria-label="5 de 5 estrellas"><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg></div>
+          <blockquote style="margin-top:1rem">Pan y ponqués frescos.</blockquote>
+          <div class="t-meta"><span class="t-chip">Comida 5/5</span><span class="t-chip">Servicio y ambiente 4/5</span></div>
+          <div class="t-author"><span class="avatar" aria-hidden="true">J</span><figcaption><strong>José Luis Lagos</strong><small>Cliente de la panadería</small></figcaption></div>
+        </figure>
+      </div>
+
+      <div class="t-controls">
+        <div class="dots" id="dots"></div>
+        <div class="arrows">
+          <button class="arrow-btn" id="prev" type="button" aria-label="Reseña anterior"><svg class="icon icon-stroke" aria-hidden="true"><use href="#i-left"/></svg></button>
+          <button class="arrow-btn" id="next" type="button" aria-label="Reseña siguiente"><svg class="icon icon-stroke" aria-hidden="true"><use href="#i-arrow"/></svg></button>
+        </div>
+      </div>
+    </div>
+
+    <p class="rating-sum reveal"><b>4.5</b><span class="stars" aria-hidden="true"><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star"/></svg><svg class="icon"><use href="#i-star-half"/></svg></span> promedio en Google Maps</p>
+  </div>
+</section>
+
+
+<!-- ============================ PREGUNTAS FRECUENTES ============================ -->
+<section class="section faq" id="preguntas" aria-labelledby="faq-title">
+  <div class="container faq-grid">
+    <div class="section-head reveal">
+      <p class="eyebrow">Antes de escribirnos</p>
+      <h2 id="faq-title">Preguntas frecuentes</h2>
+      <p>Lo esencial para consultar un pastel, conocer el menú o visitarnos.</p>
+    </div>
+    <div class="faq-list reveal">
+      <details>
+        <summary>¿Cómo puedo pedir un pastel personalizado?</summary>
+        <p>Cuéntanos por WhatsApp qué quieres celebrar y comparte tu idea o una foto de referencia. Te responderemos para revisar los detalles y la cotización.</p>
+      </details>
+      <details>
+        <summary>¿Dónde puedo consultar los precios y la disponibilidad?</summary>
+        <p>Los precios y la disponibilidad se confirman directamente por WhatsApp. Así podemos orientarte según el producto o diseño que estás buscando.</p>
+      </details>
+      <details>
+        <summary>¿Puedo consultar el menú de desayunos y brunch?</summary>
+        <p>Sí. Revisa las categorías de combos, calentados, desayunos y bebidas en la sección Brunch. Escríbenos para confirmar precios y disponibilidad.</p>
+      </details>
+      <details>
+        <summary>¿Dónde está ubicada la panadería?</summary>
+        <p>Estamos en Cl. 39 Bis Sur #72J-62, Bogotá. Usa el enlace de cómo llegar para abrir las indicaciones.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CTA FINAL + FORMULARIO ============================ -->
+<section class="section contact" id="contacto" aria-labelledby="contacto-title">
+  <div class="container contact-grid">
+    <div class="reveal" data-reveal="left">
+      <p class="eyebrow" style="color:var(--gold-soft)">Hagamos tu pedido</p>
+      <h2 id="contacto-title" style="margin-top:.6rem">¿Listo para <span class="script">celebrar?</span></h2>
+      <p class="lead">Escríbenos por WhatsApp y cuéntanos qué quieres celebrar. Te ayudamos a elegir el pastel perfecto.</p>
+      <a class="btn btn-light btn-giant" data-wa="Hola Kenia, quiero hacer un pedido. ¿Me pueden ayudar?" href="https://wa.me/573227646484" target="_blank" rel="noopener">
+        <svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg> Pedir por WhatsApp
+      </a>
+      <ul class="contact-facts">
+        <li><svg class="icon icon-stroke" aria-hidden="true"><use href="#i-phone"/></svg> WhatsApp: <a href="https://wa.me/573227646484" target="_blank" rel="noopener"><strong>322 764 6484</strong></a></li>
+        <li><svg class="icon icon-stroke" aria-hidden="true"><use href="#i-pin"/></svg> Cl. 39 Bis Sur #72J-62, Bogotá</li>
+      </ul>
+    </div>
+
+    <div class="form-card reveal" data-reveal="right" id="formCard">
+      <form id="contactForm" novalidate>
+        <h3>O déjanos tus datos</h3>
+        <p class="sub">Te contestamos por WhatsApp con toda la información.</p>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Tu nombre" required minlength="2" maxlength="60">
+            <p class="error" id="err-nombre"></p>
+          </div>
+          <div class="field">
+            <label for="telefono">Teléfono / WhatsApp</label>
+            <input id="telefono" name="telefono" type="tel" inputmode="tel" autocomplete="tel" placeholder="300 000 0000" required>
+            <p class="error" id="err-telefono"></p>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="evento">Tipo de evento</label>
+          <select id="evento" name="evento" required>
+            <option value="">Selecciona una opción</option>
+            <option>Cumpleaños</option>
+            <option>Graduación</option>
+            <option>Baby shower</option>
+            <option>Bautizo o primera comunión</option>
+            <option>Aniversario o boda</option>
+            <option>Reserva de brunch</option>
+            <option>Pedido de panadería</option>
+            <option>Otro</option>
+          </select>
+          <p class="error" id="err-evento"></p>
+        </div>
+
+        <div class="field">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos fecha, número de personas, sabores o el diseño que imaginas…" required minlength="10" maxlength="500"></textarea>
+          <span class="count" id="count">0/500</span>
+          <p class="error" id="err-mensaje"></p>
+        </div>
+
+        <div class="field privacy-field">
+          <label class="consent-label" for="privacyConsent">
+            <input id="privacyConsent" name="privacyConsent" type="checkbox" required>
+            <span>Autorizo de manera previa, expresa e informada al responsable identificado en la <a href="legal.html#privacidad" target="_blank" rel="noopener">Política de Privacidad</a> a tratar los datos que ingreso para responder esta solicitud y gestionar la cotización, pedido o reserva. Conozco mis derechos y cómo ejercerlos.</span>
+          </label>
+          <p class="error" id="err-privacy" role="alert"></p>
+          <p class="privacy-hint">El formulario prepara un mensaje y lo abre en WhatsApp; este sitio no envía tus datos a un servidor propio.</p>
+        </div>
+
+        <button class="btn btn-submit" type="submit"><span class="spinner" aria-hidden="true"></span><span class="label">Enviar por WhatsApp</span><svg class="icon icon-stroke" aria-hidden="true"><use href="#i-send"/></svg></button>
+        <p class="form-note">Al enviar se abrirá WhatsApp con tu mensaje listo.</p>
+      </form>
+
+      <div class="success" id="success" role="status" tabindex="-1">
+        <svg class="check" viewBox="0 0 92 92" aria-hidden="true"><circle cx="46" cy="46" r="41"/><path d="M28 47l12 12 25-27"/></svg>
+        <h3>¡Gracias, <span id="okName"></span>!</h3>
+        <p>Abrimos WhatsApp con tu mensaje. Si no se abrió, toca el botón y te atendemos enseguida.</p>
+        <a class="btn" id="okLink" href="https://wa.me/573227646484" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg> Abrir WhatsApp</a>
+        <p style="margin-top:1rem"><button type="button" id="again" style="background:none;border:0;color:var(--red);font-weight:700;text-decoration:underline">Enviar otro mensaje</button></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ VISÍTANOS ============================ -->
+<section class="visit" id="visitanos" aria-labelledby="visit-title">
+  <div class="container visit-grid">
+    <div class="visit-card reveal" data-reveal="left">
+      <p class="eyebrow">Visítanos</p>
+      <h2 id="visit-title">Te esperamos con el pan <span class="script">calientico</span></h2>
+      <ul style="display:grid;gap:1rem">
+        <li><svg class="icon icon-stroke" aria-hidden="true"><use href="#i-pin"/></svg><div><strong>Dirección</strong>Cl. 39 Bis Sur #72J-62, Bogotá</div></li>
+      </ul>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=Cl.+39+Bis+Sur+%2372J-62+Bogot%C3%A1" target="_blank" rel="noopener"><svg class="icon icon-stroke" aria-hidden="true"><use href="#i-pin"/></svg> Cómo llegar</a>
+    </div>
+    <div class="map-frame map-placeholder reveal" data-reveal="right" id="mapMount">
+      <div class="map-placeholder-inner">
+        <span class="map-kicker">Bogotá · Colombia</span>
+        <strong>Cl. 39 Bis Sur #72J-62</strong>
+        <p>El mapa de Google se conecta únicamente cuando eliges cargarlo.</p>
+        <button class="btn btn-outline" id="loadMap" type="button">Cargar mapa de Google Maps</button>
+        <a class="map-fallback" href="https://www.google.com/maps/search/?api=1&amp;query=Cl.+39+Bis+Sur+%2372J-62+Bogot%C3%A1" target="_blank" rel="noopener noreferrer">Abrir indicaciones en una nueva pestaña</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="footer-logo" href="#inicio" aria-label="Panadería y Pastelería Kenia, inicio"><img src="assets/logo.png" width="520" height="238" alt="Panadería y Pastelería Kenia"></a>
+        <p>Panadería y pastelería artesanal en Bogotá. Endulzamos tus momentos más especiales.</p>
+      </div>
+      <div>
+        <h4>Encuéntranos</h4>
+        <ul class="footer-list">
+          <li><svg class="icon icon-stroke" aria-hidden="true"><use href="#i-pin"/></svg><span>Cl. 39 Bis Sur #72J-62,<br>Bogotá, Colombia</span></li>
+          <li><svg class="icon icon-stroke" aria-hidden="true"><use href="#i-phone"/></svg><a href="https://wa.me/573227646484" target="_blank" rel="noopener">WhatsApp 322 764 6484</a></li>
+        </ul>
+      </div>
+    </div>
+    <nav class="legal-links" aria-label="Información legal">
+      <a href="legal.html#privacidad">Privacidad</a>
+      <a href="legal.html#cookies">Cookies</a>
+      <a href="legal.html#terminos">Términos</a>
+      <a href="legal.html#cambios">Cambios y cancelaciones</a>
+      <a href="legal.html#aviso">Aviso legal</a>
+      <button type="button" class="text-button" data-open-privacy>Ajustes de privacidad</button>
+    </nav>
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> Panadería y Pastelería Kenia. Todos los derechos reservados.</span>
+      <span>Hecho con cariño en Bogotá</span>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Preferencias de privacidad: no se instalan cookies opcionales en esta versión. -->
+<div id="preferencias" class="privacy-anchor" aria-hidden="true"></div>
+<aside class="cookie-banner" id="cookieBanner" role="region" aria-label="Preferencias de privacidad" hidden>
+  <div class="cookie-copy">
+    <strong>Tu privacidad importa</strong>
+    <p>Esta versión no carga herramientas de analítica ni publicidad. Puedes guardar tu preferencia o revisar las categorías disponibles.</p>
+  </div>
+  <div class="cookie-actions">
+    <button type="button" class="btn btn-small btn-outline" id="rejectOptional">Rechazar opcionales</button>
+    <button type="button" class="text-button" data-open-privacy>Configurar</button>
+    <button type="button" class="btn btn-small" id="acceptOptional">Aceptar todas</button>
+  </div>
+</aside>
+
+<dialog class="privacy-dialog" id="privacySettings" aria-labelledby="privacySettingsTitle">
+  <div class="privacy-dialog-head">
+    <div>
+      <p class="eyebrow">Control de privacidad</p>
+      <h2 id="privacySettingsTitle">Preferencias de cookies</h2>
+    </div>
+    <button type="button" class="icon-button" id="closePrivacy" aria-label="Cerrar configuración">×</button>
+  </div>
+  <p>Las preferencias necesarias permiten recordar esta elección. Actualmente no hay herramientas de analítica ni publicidad conectadas a este sitio.</p>
+  <div class="privacy-choice locked">
+    <div><strong>Necesarias</strong><small>Almacenamiento local de tu preferencia de privacidad.</small></div>
+    <label><input type="checkbox" checked disabled aria-label="Necesarias siempre activas"> Siempre activas</label>
+  </div>
+  <div class="privacy-choice">
+    <div><strong>Analíticas</strong><small>No hay proveedores analíticos configurados.</small></div>
+    <label class="switch-label"><input type="checkbox" id="analyticsConsent"> Permitir</label>
+  </div>
+  <div class="privacy-choice">
+    <div><strong>Publicidad</strong><small>No hay píxeles ni herramientas publicitarias configuradas.</small></div>
+    <label class="switch-label"><input type="checkbox" id="marketingConsent"> Permitir</label>
+  </div>
+  <p class="privacy-dialog-note">Cambiar estas opciones no activa servicios que no están instalados. El mapa de Google se carga solo cuando pulsas su botón.</p>
+  <div class="privacy-dialog-actions">
+    <button type="button" class="btn btn-outline" id="savePrivacy">Guardar selección</button>
+    <button type="button" class="btn" id="acceptAllPrivacy">Aceptar todas</button>
+  </div>
+</dialog>
+
+<!-- Botón flotante WhatsApp -->
+<a class="fab" id="fab" data-wa="Hola Kenia, quiero hacer un pedido." href="https://wa.me/573227646484" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg></a>
+
+<script>
+/* ==========================================================================
+   CONFIGURACIÓN — edita aquí los datos del negocio
+   ========================================================================== */
+const CONFIG = {
+  whatsapp: '573227646484'                        // Colombia (+57) + número
+};
+
+/* Menú de desayunos / brunch  */
+const MENU = {
+  combos: { label: 'Combos', groups: [{ items: [
+    { n: 'Combo 1', d: 'Huevos con arroz + chocolate + jugo de naranja + pan + queso' },
+    { n: 'Combo 2', d: 'Tamal especial + bebida caliente o gaseosa y pan' },
+    { n: 'Combo 3', d: 'Huevos rancheros con arroz + chocolate, jugo de naranja + pan' },
+    { n: 'Combo 4', d: 'Changua tradicional + chocolate o gaseosa 235 ml y pan' },
+    { n: 'Combo 5', d: 'Calentado de su elección + jugo de naranja y pan' },
+    { n: 'Combo 6', d: 'Caldo de costilla o pescado + huevos pericos o revueltos + chocolate o jugo de naranja + pan' }
+  ]}], note: 'Todo cambio en su combo tiene un costo adicional.' },
+  calentados: { label: 'Calentados', groups: [{ title: 'Calentados caseros', items: [
+    { n: 'Calentado paisa', d: 'Huevo frito y chorizo' },
+    { n: 'Calentado montañero', d: 'Arroz y lenteja, maduro y huevos revueltos' },
+    { n: 'Calentado de la abuela', d: 'Arroz con espagueti, tocineta y huevos revueltos' },
+    { n: 'Calentado de la casa', d: 'Arroz con fideos, carne molida y huevos revueltos' }
+  ]}]},
+  desayunos: { label: 'Desayunos', groups: [{ items: [
+    { n: 'Huevos al gusto', d: 'Fritos, pericos o revueltos' },
+    { n: 'Huevos con arroz', d: 'Huevos al gusto y porción de arroz' },
+    { n: 'Huevos especiales', d: 'Tres huevos, tocineta, maíz tierno y queso' },
+    { n: 'Huevos rancheros', d: 'Cebolla, tomate, salchicha ranchera y queso' },
+    { n: 'Huevos rancheros con arroz', d: '' },
+    { n: 'Carne en bistec', d: 'Arroz, papa y 150 g de carne en bistec' },
+    { n: 'Moñona', d: 'Carne en bistec, huevos fritos, arroz y papa' },
+    { n: 'Changua tradicional', d: '' },
+    { n: 'Changua santandereana', d: 'Almojábana y queso' }
+  ]}]},
+  bebidas: { label: 'Bebidas', groups: [
+    { title: 'Frías', names: ['Jugos en agua', 'Jugos en leche', 'Limonada de coco', 'Limonada de cereza', 'Milo frío', 'Malteada'] },
+    { title: 'Calientes', names: ['Chocolate', 'Milo caliente', 'Mocachino', 'Aromática de frutas', 'Capuchino'] },
+    { title: 'Adicionales', names: ['Porción de arroz', 'Porción de papa', 'Porción de carne', 'Porción de costilla', 'Chorizo', 'Un huevo', 'Queso tajado', 'Salchicha', 'Recipiente para llevar'] }
+  ]}
+};
+
+/* ==========================================================================
+   UTILIDADES
+   ========================================================================== */
+const $  = (s, c = document) => c.querySelector(s);
+const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const waUrl = (text) => `https://wa.me/${CONFIG.whatsapp}${text ? '?text=' + encodeURIComponent(text) : ''}`;
+
+/* Enlaces de WhatsApp: toman el mensaje del atributo data-wa */
+$$('[data-wa]').forEach(a => { a.href = waUrl(a.dataset.wa); });
+
+$('#year').textContent = new Date().getFullYear();
+
+/* ==========================================================================
+   NAVBAR: efecto glass, menú móvil, enlace activo, botón flotante
+   ========================================================================== */
+const header = $('#header'), fab = $('#fab'), toggle = $('#navToggle'), menu = $('#menu');
+
+function onScroll() {
+  header.classList.toggle('scrolled', scrollY > 24);
+  fab.classList.toggle('show', scrollY > 500);
+}
+addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+
+function setMenu(open) {
+  menu.classList.toggle('open', open);
+  toggle.setAttribute('aria-expanded', open);
+  toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+  if (open) header.classList.add('scrolled'); else onScroll();
+}
+toggle.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+$$('a', menu).forEach(a => a.addEventListener('click', () => setMenu(false)));
+addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
+
+/* Resalta el enlace de la sección visible */
+const navLinks = $$('.nav-link');
+const spy = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (!en.isIntersecting) return;
+    const id = '#' + en.target.id;
+    navLinks.forEach(l => l.classList.toggle('is-active', l.getAttribute('href') === id));
+  });
+}, { rootMargin: '-45% 0px -50% 0px' });
+['inicio', 'pasteles', 'brunch', 'preguntas', 'contacto'].forEach(id => { const section = document.getElementById(id); if (section) spy.observe(section); });
+
+/* ==========================================================================
+   SCROLL REVEAL (IntersectionObserver)
+   ========================================================================== */
+const revealer = new IntersectionObserver((entries, obs) => {
+  entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('is-visible'); obs.unobserve(en.target); } });
+}, { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+$$('.reveal').forEach(el => revealer.observe(el));
+
+/* ==========================================================================
+   TARJETAS: brillo que sigue al cursor
+   ========================================================================== */
+$$('.card').forEach(card => {
+  card.addEventListener('pointermove', e => {
+    const r = card.getBoundingClientRect();
+    card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+    card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  });
+});
+
+/* ==========================================================================
+   LIGHTBOX DEL PORTAFOLIO
+   ========================================================================== */
+const lb = $('#lightbox');
+$$('[data-lb]').forEach(btn => btn.addEventListener('click', () => {
+  const { lb: key, title, desc } = btn.dataset;
+  const img = $('#lbImg');
+  img.style.backgroundImage = `var(--img-${key})`;
+  img.setAttribute('aria-label', btn.querySelector('.img').getAttribute('aria-label'));
+  $('#lbTitle').textContent = title;
+  $('#lbDesc').textContent = desc;
+  $('#lbWa').href = waUrl(`Hola Kenia, me gustó el pastel "${title}" del portafolio. Quiero uno parecido.`);
+  lb.showModal();
+}));
+$('#lbClose').addEventListener('click', () => lb.close());
+lb.addEventListener('click', e => { if (e.target === lb) lb.close(); });   // clic en el fondo
+
+/* ==========================================================================
+   MENÚ DE BRUNCH CON PESTAÑAS
+   ========================================================================== */
+const tabsEl = $('#menuTabs'), panel = $('#menuPanel');
+const keys = Object.keys(MENU);
+
+function renderMenu(key) {
+  const data = MENU[key];
+  panel.innerHTML = data.groups.map(g => {
+    const title = g.title ? `<h4>${g.title}</h4>` : '';
+    if (g.names) return `<div class="menu-group">${title}<ul class="menu-names">${g.names.map(n => `<li>${n}</li>`).join('')}</ul></div>`;
+    const rows = g.items.map(i => `
+      <li class="menu-item">
+        <div class="mi-top"><span class="mi-name">${i.n}</span></div>
+        ${i.d ? `<p>${i.d}</p>` : ''}
+      </li>`).join('');
+    return `<div class="menu-group">${title}<ul>${rows}</ul></div>`;
+  }).join('') + (data.note ? `<p class="menu-note">${data.note}</p>` : '');
+  panel.setAttribute('aria-labelledby', 'tab-' + key);
+  panel.style.animation = 'none'; panel.offsetHeight; panel.style.animation = '';
+}
+
+keys.forEach((k, i) => {
+  const b = document.createElement('button');
+  b.className = 'tab'; b.type = 'button'; b.role = 'tab'; b.id = 'tab-' + k;
+  b.textContent = MENU[k].label; b.dataset.key = k;
+  b.setAttribute('aria-selected', i === 0);
+  b.tabIndex = i === 0 ? 0 : -1;
+  tabsEl.appendChild(b);
+});
+function selectTab(btn) {
+  $$('.tab', tabsEl).forEach(t => { const on = t === btn; t.setAttribute('aria-selected', on); t.tabIndex = on ? 0 : -1; });
+  renderMenu(btn.dataset.key);
+}
+tabsEl.addEventListener('click', e => { const t = e.target.closest('.tab'); if (t) selectTab(t); });
+tabsEl.addEventListener('keydown', e => {            // navegación con flechas
+  const tabs = $$('.tab', tabsEl), i = tabs.indexOf(document.activeElement);
+  if (i < 0 || !['ArrowRight', 'ArrowLeft'].includes(e.key)) return;
+  const next = tabs[(i + (e.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length];
+  next.focus(); selectTab(next);
+});
+renderMenu(keys[0]);
+
+/* ==========================================================================
+   CARRUSEL DE TESTIMONIOS
+   ========================================================================== */
+(() => {
+  const slides = $$('.t-slide'), dotsEl = $('#dots');
+  let idx = 0, timer = null, startX = 0;
+
+  const dots = slides.map((_, i) => {
+    const d = document.createElement('button');
+    d.className = 'dot-btn'; d.type = 'button'; d.setAttribute('aria-label', `Ir a la reseña ${i + 1}`);
+    d.addEventListener('click', () => { show(i); restart(); });
+    dotsEl.appendChild(d); return d;
+  });
+
+  function show(i) {
+    idx = (i + slides.length) % slides.length;
+    slides.forEach((s, n) => { s.classList.toggle('is-active', n === idx); s.setAttribute('aria-hidden', n !== idx); });
+    dots.forEach((d, n) => d.setAttribute('aria-current', n === idx));
+  }
+  const restart = () => { stop(); if (!reduceMotion) timer = setInterval(() => show(idx + 1), 7000); };
+  const stop = () => clearInterval(timer);
+
+  $('#prev').addEventListener('click', () => { show(idx - 1); restart(); });
+  $('#next').addEventListener('click', () => { show(idx + 1); restart(); });
+
+  const car = $('#carousel');
+  car.addEventListener('mouseenter', stop); car.addEventListener('mouseleave', restart);
+  car.addEventListener('focusin', stop);    car.addEventListener('focusout', restart);
+  car.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+  car.addEventListener('touchend', e => {
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 45) { show(idx + (dx < 0 ? 1 : -1)); restart(); }
+  });
+  show(0); restart();
+})();
+
+/* ==========================================================================
+   FORMULARIO: validación + confeti + envío por WhatsApp
+   ========================================================================== */
+(() => {
+  const form = $('#contactForm'), card = $('#formCard');
+  const f = { nombre: $('#nombre'), telefono: $('#telefono'), evento: $('#evento'), mensaje: $('#mensaje') };
+  const privacyConsent = $('#privacyConsent');
+
+  const normalizePhone = v => {
+    let d = v.replace(/\D/g, '');
+    if (d.length === 12 && d.startsWith('57')) d = d.slice(2);   // quita el +57
+    return d;
+  };
+  const rules = {
+    nombre:   v => v.trim().length < 2 ? 'Escribe tu nombre (mínimo 2 letras).' : '',
+    telefono: v => /^3\d{9}$/.test(normalizePhone(v)) ? '' : 'Ingresa un celular colombiano de 10 dígitos (ej. 322 764 6484).',
+    evento:   v => v ? '' : 'Selecciona el tipo de evento.',
+    mensaje:  v => v.trim().length < 10 ? 'Cuéntanos un poco más (mínimo 10 caracteres).' : ''
+  };
+
+  function validate(name) {
+    const input = f[name], box = input.closest('.field'), msg = rules[name](input.value);
+    box.classList.toggle('invalid', !!msg);
+    box.classList.toggle('valid', !msg && input.value !== '');
+    $('#err-' + name).textContent = msg;
+    input.setAttribute('aria-invalid', !!msg);
+    if (msg) input.setAttribute('aria-describedby', 'err-' + name); else input.removeAttribute('aria-describedby');
+    return !msg;
+  }
+  Object.keys(f).forEach(n => {
+    f[n].addEventListener('blur', () => validate(n));
+    f[n].addEventListener('input', () => { if (f[n].closest('.field').classList.contains('invalid')) validate(n); });
+  });
+  f.mensaje.addEventListener('input', () => { $('#count').textContent = `${f.mensaje.value.length}/500`; });
+  privacyConsent.addEventListener('change', validatePrivacy);
+
+  function validatePrivacy() {
+    const box = privacyConsent.closest('.field');
+    const error = privacyConsent.checked ? '' : 'Debes autorizar el tratamiento de datos para enviar esta solicitud.';
+    box.classList.toggle('invalid', !!error);
+    $('#err-privacy').textContent = error;
+    privacyConsent.setAttribute('aria-invalid', String(!!error));
+    if (error) privacyConsent.setAttribute('aria-describedby', 'err-privacy');
+    else privacyConsent.removeAttribute('aria-describedby');
+    return !error;
+  }
+
+  function confetti() {
+    if (reduceMotion) return;
+    const colors = ['#C8102E', '#D4AF37', '#F7C6D1', '#BDE0F0', '#E5C185'];
+    for (let i = 0; i < 70; i++) {
+      const c = document.createElement('i');
+      c.className = 'confetti';
+      c.style.left = Math.random() * 100 + 'vw';
+      c.style.background = colors[i % colors.length];
+      c.style.setProperty('--x', (Math.random() * 160 - 80) + 'px');
+      c.style.setProperty('--r', (Math.random() * 900 - 450) + 'deg');
+      c.style.setProperty('--t', (2 + Math.random() * 1.8) + 's');
+      c.style.animationDelay = Math.random() * .5 + 's';
+      document.body.appendChild(c);
+      setTimeout(() => c.remove(), 4800);
+    }
+  }
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const fieldsOk = Object.keys(f).map(validate).every(Boolean);
+    const consentOk = validatePrivacy();
+    if (!fieldsOk || !consentOk) {
+      const bad = $('.field.invalid input, .field.invalid select, .field.invalid textarea', form);
+      if (bad) bad.focus();
+      else privacyConsent.focus();
+      return;
+    }
+
+    const btn = $('.btn-submit', form);
+    btn.disabled = true;
+    const text = `¡Hola Kenia! Soy ${f.nombre.value.trim()}.\nQuiero información para: ${f.evento.value}.\nMi teléfono: ${normalizePhone(f.telefono.value)}.\n\n${f.mensaje.value.trim()}\n\nAutorización de tratamiento: he leído la Política de Privacidad y autorizo el tratamiento de estos datos para responder esta solicitud y gestionar la cotización, pedido o reserva.`;
+    const url = waUrl(text);
+
+    $('#okName').textContent = f.nombre.value.trim().split(' ')[0];
+    $('#okLink').href = url;
+    card.classList.add('sent');
+    confetti();
+    $('#success').focus({ preventScroll: true });
+    const waWindow = window.open(url, '_blank');
+    if (waWindow) waWindow.opener = null;
+    btn.disabled = false;
+  });
+
+  $('#again').addEventListener('click', () => {
+    form.reset(); $('#count').textContent = '0/500';
+    $('#err-privacy').textContent = ''; privacyConsent.setAttribute('aria-invalid', 'false');
+    $$('.field', form).forEach(x => x.classList.remove('valid', 'invalid'));
+    card.classList.remove('sent');
+  });
+})();
+</script>
+<script src="assets/lazy-images.js" defer></script>
+<script src="assets/privacy.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+
+<!DOCTYPE html>
+<html lang="es-CO">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#C8102E">
+<title>404 | Panadería y Pastelería Kenia</title>
+<link rel="icon" href="assets/favicon.png">
+<link rel="stylesheet" href="assets/kenia-tokens.css">
+<style>
+/* Tokens globales centralizados en assets/kenia-tokens.css. */
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--cream);color:var(--ink);
+  font:16px/1.65 Arial,sans-serif;
+  min-height:100vh;display:flex;flex-direction:column;
+}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+header{
+  background:rgba(253,251,247,.95);
+  border-bottom:1px solid #ead9a5;
+}
+.nav{
+  min-height:85px;display:flex;align-items:center;
+  justify-content:space-between;gap:20px;
+}
+.logo img{width:145px;max-width:100%;height:auto}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:13px 24px;border-radius:40px;
+  background:var(--red);border:2px solid var(--red);
+  color:white;font-weight:700;transition:.25s;
+}
+.btn:hover{background:var(--red-dark);transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--red)}
+.btn-outline:hover{background:var(--red);color:white}
+main{flex:1;display:grid;align-items:center;padding:55px 0}
+.grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  align-items:center;gap:55px;
+}
+.eyebrow{
+  color:var(--red);font-family:Georgia,serif;
+  font-style:italic;font-size:22px;
+}
+.code{
+  font-size:clamp(90px,16vw,180px);
+  line-height:.9;font-weight:900;
+  color:var(--gold);letter-spacing:-.08em;
+  margin:20px 0;
+  text-shadow:5px 5px 0 #d4af3725;
+}
+h1{
+  font-family:Georgia,'Times New Roman',serif;
+  font-size:clamp(35px,5vw,58px);
+  line-height:1.12;margin:20px 0;
+}
+h1 span{color:var(--red);font-style:italic}
+.description{font-size:18px;color:var(--ink-soft);max-width:520px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin:30px 0}
+.links{
+  display:flex;flex-wrap:wrap;gap:18px;
+  margin-top:25px;font-size:14px;font-weight:600;
+}
+.links a{color:var(--red)}
+.links a:hover{text-decoration:underline}
+.visual{position:relative;margin:0}
+.photo{
+  aspect-ratio:4/5;border-radius:240px 240px 30px 30px;
+  overflow:hidden;border:8px solid white;
+  box-shadow:0 25px 65px #36211d25;
+  background:#f7c6d1;
+}
+.photo img{width:100%;height:100%;object-fit:cover}
+.caption{
+  position:absolute;bottom:-20px;left:20px;right:20px;
+  background:white;padding:18px 22px;border-radius:18px;
+  box-shadow:0 10px 30px #36211d18;
+  border-left:4px solid var(--gold);
+}
+.caption small{display:block;color:var(--red);font-style:italic}
+.caption strong{font-family:Georgia,serif;font-size:20px}
+footer{
+  background:#2b1714;color:white;
+  padding:25px 0;border-top:5px solid var(--gold);
+}
+.footer-row{
+  display:flex;justify-content:space-between;
+  gap:15px;flex-wrap:wrap;align-items:center;
+}
+footer a{color:#e5c185}
+@media(max-width:760px){
+  main{padding:35px 0 60px}
+  .grid{grid-template-columns:1fr;gap:45px}
+  .copy{text-align:center}
+  .description{margin:auto}
+  .actions,.links{justify-content:center}
+  .visual{width:min(100%,430px);margin:0 auto}
+  .photo{aspect-ratio:5/4;border-radius:30px}
+  .caption{bottom:-25px}
+}
+@media(max-width:420px){
+  .logo img{width:115px}
+  .btn{padding:12px 18px;font-size:14px}
+}
+</style>
+<link rel="stylesheet" href="assets/kenia-secondary-pages.css">
+</head>
+<body class="error-page">
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="index.html" aria-label="Kenia inicio">
+      <img src="assets/logo.png" alt="Panadería y Pastelería Kenia">
+    </a>
+    <a class="btn btn-outline" href="index.html">Volver al sitio</a>
+  </div>
+</header>
+
+<main>
+<div class="container grid">
+
+<section class="copy">
+  <p class="eyebrow">Ups, nos salimos del camino</p>
+  <div class="code" aria-hidden="true">404</div>
+  <h1>Esta página no está <span>en el menú.</span></h1>
+  <p class="description">
+    Puede que el enlace haya cambiado o que la dirección
+    esté escrita de otra manera. No te preocupes:
+    todavía hay muchas cosas ricas por descubrir en Kenia.
+  </p>
+
+  <div class="actions">
+    <a class="btn" href="index.html">Volver al inicio</a>
+    <a class="btn btn-outline" href="index.html#pasteles">Explorar pasteles</a>
+  </div>
+
+  <nav class="links" aria-label="Otras secciones">
+    <a href="index.html#brunch">Conocer el brunch</a>
+    <a href="index.html#contacto">Contactar a Kenia</a>
+    <a href="legal.html">Información legal</a>
+  </nav>
+</section>
+
+<figure class="visual">
+  <div class="photo">
+    <img src="assets/rosas.jpg"
+         alt="Pastel decorado con rosas de crema de Kenia"
+         width="900" height="1125">
+  </div>
+  <figcaption class="caption">
+    <small>Un camino más dulce</small>
+    <strong>Encuentra tu próximo momento especial.</strong>
+  </figcaption>
+</figure>
+
+</div>
+</main>
+
+<footer>
+  <div class="container footer-row">
+    <span>© <span id="year"></span> Panadería y Pastelería Kenia · Bogotá</span>
+    <a href="https://wa.me/573227646484" target="_blank" rel="noopener">
+      WhatsApp 322 764 6484
+    </a>
+  </div>
+</footer>
+
+<script>
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
