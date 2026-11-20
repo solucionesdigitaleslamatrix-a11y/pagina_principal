@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Identidad y datos comerciales editables en el bloque CONFIG del script. -->
 <title>Soluciones Digitales La Matrix | Páginas web para negocios en Bogotá</title>
+<link rel="icon" type="image/png" href="./favicon.png">
+<link rel="apple-touch-icon" href="./favicon.png">
 <meta name="description" content="Páginas web profesionales y accesibles para pequeños y medianos negocios de Bogotá. Muestra tus servicios, ubicación y medios de contacto. Planes desde $125.000 COP.">
 <meta name="theme-color" content="#1340AF">
 <meta property="og:type" content="website">
@@ -184,7 +186,8 @@ img,svg{max-width:100%}
 .toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,30px);background:#0f172a;color:#fff;padding:.9rem 1.3rem;border-radius:14px;box-shadow:var(--shadow-lg);z-index:2000;opacity:0;pointer-events:none;transition:all .3s;max-width:min(92vw,460px);text-align:center;font-size:.92rem;font-weight:600;border:1px solid #334155}
 .toast.show{opacity:1;transform:translate(-50%,0)}
 
-SISTEMA VISUAL PREMIUM — LANDING COMERCIAL LA MATRIX
+/* =========================================================
+   SISTEMA VISUAL PREMIUM — LANDING COMERCIAL LA MATRIX
    ========================================================= */
 body{background:linear-gradient(180deg,#f7f9fb 0%,#eef3f6 100%);color:#122033;font-family:Inter,system-ui,sans-serif;letter-spacing:-.012em}
 .wrap{max-width:1380px;padding:clamp(16px,2.7vw,38px)}
@@ -355,6 +358,372 @@ h1,h2,h3,h4,.plan-price{font-family:var(--font-heading)}
   .cats .cat:last-child{grid-column:auto}
   .side-grid{grid-template-columns:1fr}
 }
+
+/* =========================================================
+   RESPONSIVE FINAL — TABLET, MÓVIL Y PANTALLAS ESTRECHAS
+   Estas reglas se mantienen al final para prevalecer sobre
+   los estilos de escritorio definidos anteriormente.
+   ========================================================= */
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+.wrap {
+  width: 100%;
+  max-width: 1380px;
+  margin-inline: auto;
+}
+
+/* Evita que el ancho mínimo de los elementos Grid/Flex
+   obligue a sus columnas a desbordar el viewport. */
+.top,
+.body,
+.left,
+.right,
+.lower,
+.banner,
+.logo-slot,
+.cats,
+.cat,
+.photo-slot,
+.about,
+.side-grid,
+.contact-stack,
+.contact-btn,
+.contact-btn span,
+.plan-grid,
+.plan-card,
+.process-grid,
+.process-card,
+.terms-panel,
+.terms-content {
+  min-width: 0;
+}
+
+.banner h1,
+.banner p,
+.banner .eyebrow,
+.chip,
+.cat,
+.guide,
+.about h2,
+.about p,
+.benefits li,
+.contact-btn strong,
+.section-head h2,
+.section-head p,
+.plan-card h3,
+.plan-includes li,
+.process-card h3,
+.process-card p,
+.terms-panel summary,
+.terms-list li,
+.foot {
+  overflow-wrap: anywhere;
+}
+
+/* Escritorio: dos columnas equilibradas y sin mínimos rígidos. */
+@media (min-width: 1101px) {
+  .body {
+    grid-template-columns: minmax(0, 1fr) 310px;
+  }
+
+  .top {
+    grid-template-columns: minmax(170px, .28fr) minmax(0, 1fr);
+  }
+
+  .lower {
+    grid-template-columns: minmax(0, .85fr) minmax(0, 1.45fr);
+  }
+
+  .right {
+    position: sticky;
+    top: 24px;
+  }
+}
+
+/* Portátiles estrechos y tabletas: el contacto pasa debajo
+   del contenido principal, sin competir por el ancho. */
+@media (max-width: 1100px) {
+  .body {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .right {
+    position: static;
+    top: auto;
+    width: 100%;
+  }
+}
+
+@media (min-width: 681px) and (max-width: 1100px) {
+  .wrap {
+    padding: 20px;
+  }
+
+  .top {
+    grid-template-columns: minmax(0, 190px) minmax(0, 1fr);
+    gap: 18px;
+  }
+
+  .logo-slot {
+    width: 100%;
+    min-height: 190px;
+    max-height: 220px;
+    aspect-ratio: 1;
+    margin: 0;
+  }
+
+  .banner {
+    min-width: 0;
+    min-height: 220px;
+    padding: clamp(22px, 3.5vw, 34px);
+  }
+
+  .lower {
+    grid-template-columns: minmax(0, .85fr) minmax(0, 1.45fr);
+  }
+
+  .side-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-btn {
+    min-height: 78px;
+    padding: 14px;
+  }
+}
+
+/* Móvil: cada bloque ocupa el ancho disponible y se apila. */
+@media (max-width: 680px) {
+  .wrap {
+    padding: 14px;
+  }
+
+  .top {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .logo-slot {
+    width: min(100%, 170px);
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    aspect-ratio: 1;
+    margin-inline: auto;
+  }
+
+  .logo-slot img {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    padding: 6px;
+  }
+
+  .banner {
+    width: 100%;
+    min-height: 0;
+    padding: clamp(22px, 6vw, 30px) clamp(18px, 5vw, 24px);
+    border-radius: 22px;
+  }
+
+  .banner h1 {
+    font-size: clamp(1.8rem, 7.2vw, 2.5rem);
+    line-height: 1.08;
+  }
+
+  .banner p {
+    font-size: .94rem;
+    line-height: 1.65;
+  }
+
+  .banner .eyebrow {
+    font-size: .64rem;
+    letter-spacing: .14em;
+  }
+
+  .banner .chips {
+    gap: 7px;
+  }
+
+  .chip {
+    max-width: 100%;
+    white-space: normal;
+    font-size: .7rem;
+  }
+
+  .body {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 20px;
+  }
+
+  .left {
+    width: 100%;
+    gap: 15px;
+  }
+
+  .cats {
+    grid-template-columns: minmax(0, 220px);
+    justify-content: start;
+    width: 100%;
+  }
+
+  .cats .cat:last-child {
+    grid-column: auto;
+  }
+
+  .cat {
+    width: 100%;
+    white-space: normal;
+    padding: 17px 12px;
+  }
+
+  .guide {
+    text-align: left;
+    padding-inline: 2px;
+  }
+
+  .lower {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .photo-slot {
+    width: 100%;
+    max-width: 380px;
+    min-height: 0;
+    aspect-ratio: 4 / 5;
+    margin-inline: auto;
+  }
+
+  .photo-slot img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .about {
+    width: 100%;
+    padding: 22px 18px;
+  }
+
+  .about h2 {
+    font-size: clamp(1.35rem, 5.8vw, 1.7rem);
+  }
+
+  .right {
+    position: static;
+    width: 100%;
+    padding: 20px;
+  }
+
+  .side-grid,
+  .contact-stack {
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+  }
+
+  .contact-btn {
+    width: 100%;
+    min-height: 74px;
+    padding: 14px 15px;
+    gap: 12px;
+  }
+
+  .contact-btn svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .contact-btn span {
+    flex: 1 1 auto;
+  }
+
+  .contact-btn strong {
+    font-size: clamp(.86rem, 4vw, .98rem);
+    line-height: 1.3;
+  }
+
+  .plan-grid,
+  .process-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .process-card:last-child {
+    grid-column: auto;
+  }
+
+  .plan-card {
+    padding: clamp(21px, 5vw, 28px);
+  }
+
+  .plan-badge {
+    position: static;
+    align-self: flex-start;
+    order: -1;
+    margin-bottom: -6px;
+  }
+
+  .terms-panel summary {
+    padding: 17px;
+    align-items: flex-start;
+  }
+
+  .terms-content {
+    padding: 16px 17px 19px;
+  }
+
+  .terms-footer {
+    align-items: stretch;
+  }
+
+  .terms-footer .btn {
+    width: 100%;
+  }
+
+  .btn {
+    max-width: 100%;
+    white-space: normal;
+  }
+}
+
+/* Teléfonos compactos: reduce el espacio interno, no el contenido. */
+@media (max-width: 380px) {
+  .wrap {
+    padding: 12px;
+  }
+
+  .banner {
+    padding: 21px 16px;
+  }
+
+  .banner h1 {
+    font-size: clamp(1.65rem, 7.5vw, 1.9rem);
+  }
+
+  .right {
+    padding: 17px;
+  }
+
+  .contact-btn {
+    padding: 13px 12px;
+    gap: 10px;
+  }
+
+  .about {
+    padding: 20px 16px;
+  }
+
+  .section-head h2 {
+    font-size: clamp(1.55rem, 7vw, 1.85rem);
+  }
+}
+
 </style>
 </head>
 <body>
