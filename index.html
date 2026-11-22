@@ -62,7 +62,14 @@ img,svg{max-width:100%}
 .body{display:grid;grid-template-columns:7fr 3fr;gap:20px;align-items:start}
 .left{display:flex;flex-direction:column;gap:16px;min-width:0}
 
-.cats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.cats{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:12px;
+}
+.cat-link {
+  text-decoration:none;
+}
 .cat{
  background:var(--card);border:2px solid var(--line);border-radius:18px;padding:16px 8px;
  display:flex;flex-direction:column;align-items:center;gap:6px;font-weight:800;font-size:.86rem;letter-spacing:.05em;color:var(--ink);
@@ -359,6 +366,11 @@ h1,h2,h3,h4,.plan-price{font-family:var(--font-heading)}
   .side-grid{grid-template-columns:1fr}
 }
 
+ @media(max-width:900px){
+  .cats .cat:last-child{
+    grid-column:auto;
+  }
+}
 /* =========================================================
    RESPONSIVE FINAL — TABLET, MÓVIL Y PANTALLAS ESTRECHAS
    Estas reglas se mantienen al final para prevalecer sobre
@@ -757,6 +769,19 @@ body {
 <a class="cat" href="kenia/index.html" aria-label="Abrir demostración de Panadería y Pastelería Kenia">
 <svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11c0-3.3 3.6-6 8-6s8 2.7 8 6v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/><path d="M4 11h16M8 8l1 2m6-2 1 2"/></svg>
 PANADERÍA Y PASTELERÍA KENIA<small>Abrir demostración</small>
+</a>
+<a class="cat cat-link"
+   href="https://solucionesdigitaleslamatrix-a11y.github.io/juank-cafe/"
+   target="_blank"
+   rel="noopener noreferrer">
+  <svg class="line-icon" viewBox="0 0 24 24"
+       aria-hidden="true">
+    <path d="M4 8h13v8a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8Z"/>
+    <path d="M17 10h2a2 2 0 0 1 0 4h-2"/>
+    <path d="M7 3c0 1.2 1 1.2 1 2.4M12 3c0 1.2 1 1.2 1 2.4"/>
+  </svg>
+  JUANK CAFÉ
+  <small>Ver demostración</small>
 </a>
 </nav>
 <p class="guide"><em>Conoce nuestra demostración de Panadería y Pastelería Kenia</em></p>
