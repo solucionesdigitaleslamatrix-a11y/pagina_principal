@@ -737,6 +737,20 @@ body {
   }
 }
 
+ /* FORZAR TRES DEMOSTRACIONES EN UNA SOLA FILA */
+.cats {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    grid-auto-flow: row !important;
+    gap: 16px !important;
+    width: 100% !important;
+}
+
+.cats > * {
+    grid-column: auto !important;
+    width: 100% !important;
+    min-width: 0 !important;
+}
 </style>
 </head>
 <body>
