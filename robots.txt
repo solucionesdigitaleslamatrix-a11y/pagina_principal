@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://solucionesdigitaleslamatrix-a11y.github.io/pagina_principal/sitemap.xml
